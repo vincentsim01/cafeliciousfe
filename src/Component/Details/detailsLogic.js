@@ -6,7 +6,7 @@ import Header2 from '../Header2';
 
 
 
-const baseUrl = "http://localhost:9120"
+const baseUrl = "http://zomato-big-assignment-2-production.up.railway.app"
 
 const Details = () => {
 

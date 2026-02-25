@@ -6,7 +6,7 @@ const Footer = () => {
     return(
         <footer>
             <hr/>
-            <p className="footText">&copy; Cafelicious 2023</p>
+            <p className="footText">&copy; Cafelicious 2025</p>
             <hr/>
             <div className="footDiv">
                 <ul>

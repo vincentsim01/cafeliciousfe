@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-const baseUrl = "http://localhost:9120";
+const baseUrl = "http://zomato-big-assignment-2-production.up.railway.app";
 
 const CuisineFilter = (props) => {
 
