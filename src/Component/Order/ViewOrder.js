@@ -4,7 +4,7 @@ import DisplayOrder from './DisplayOrder';
 import Header from '../Header';
 import Header2 from '../Header2';
 
-const baseUrl = "http://zomato-big-assignment-2-production.up.railway.app";
+const baseUrl = "https://zomato-big-assignment-2-production.up.railway.app";
 
 const ViewOrder = () => {
     const [orders,setOrder] = useState('');

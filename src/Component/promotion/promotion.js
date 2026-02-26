@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import Header2 from '../Header2';
 import './promotion.css';
 
-const baseUrl = "http://zomato-big-assignment-2-production.up.railway.app";
+const baseUrl = "https://zomato-big-assignment-2-production.up.railway.app";
 const QuickPromotion = () => {
 
 

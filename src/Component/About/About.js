@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import Header2 from '../Header2';
 
-const baseUrl = "http://localhost:9120";
+const baseUrl = "https://zomato-big-assignment-2-production.up.railway.app";
 const QuickAbout = () => {
 
 

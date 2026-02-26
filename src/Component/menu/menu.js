@@ -5,7 +5,7 @@ import Header2 from '../Header2';
 import MenuDisplay from './menuDisplay';
 import './menuDisplay.css';
 
-const baseUrl = "http://zomato-big-assignment-2-production.up.railway.app";
+const baseUrl = "https://zomato-big-assignment-2-production.up.railway.app";
 
 const Menu = () => {
     let params = useParams();

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 const Favrestaurant = () =>{
 
-    const baseUrl = 'http://zomato-big-assignment-2-production.up.railway.app'
+    const baseUrl = 'https://zomato-big-assignment-2-production.up.railway.app'
 
     const [theResto,settheResto] = useState([]);
 
