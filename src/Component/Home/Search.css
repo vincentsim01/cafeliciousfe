@@ -2,7 +2,8 @@
     height:900px;
     /* border:10px groove green;
      */
-    background-image: url('https://i.ibb.co/5WP4pPt/image.jpg');
+    background-image: url('../../../public/cafebanner.png');
+    /* background-image: url('https://i.ibb.co/5WP4pPt/image.jpg'); */
     background-size: cover;      /* Makes it fill */
     background-position: center; 
     background-repeat: no-repeat;
@@ -11,12 +12,12 @@
     /* background-size: 100% 500px; */
     font-family: 'Comfortaa', sans-serif;
     position:relative;
-    border:solid 1px black;
+    /* border:solid 1px black; */
 }
 
 #search::before{
     background-color: grey;
-    opacity:0.5;
+    opacity:0.6;
 }
 
 .gobutton{
@@ -33,14 +34,15 @@
 
 
 .logo{
-    height:150px;
-    width: 150px;
+    height:350px;
+    width: 350px;
+    /* border:2px solid black; */
     border-radius:50%;
     margin-left: 46%;
-    margin-top: 2%;
+    margin-top: 1%;
     position: absolute;
     font-size:90px;
-    animation: revolver 5s infinite;
+    animation: revolver 4s ease-in-out;
 }
 
 @keyframes revolve{
@@ -67,66 +69,30 @@
 }
 
 
-@keyframes revolver{
-    0%{
-        margin-left:0%;
+@keyframes revolver {
+  0% {
+    transform: translateX(-100vw) rotate(0deg) scale(1);
+  }
 
-    }
-    10%{
-        margin-left:10%;
-        transform:rotateZ(30deg);
+  20% {
+    transform: translateX(-80vw) rotate(30deg) scale(1.1);
+  }
 
-    }
-    20%{
-        margin-left:20%;
-        transform: scale(1.2);
-        transform:rotateZ(45deg);
+  40% {
+    transform: translateX(-60vw) rotate(60deg) scale(1.2);
+  }
 
-    }
-    30%{
-        margin-left:30%;
-        transform: scale(1.2);
-        transform:rotateZ(60deg);
+  60% {
+    transform: translateX(-40vw) rotate(40deg) scale(1.1);
+  }
 
-    }
-    40%{
-        margin-left:40%;
-        transform:rotateZ(45deg);
+  80% {
+    transform: translateX(-20vw) rotate(25deg) scale(1.05);
+  }
 
-    }
-    50%{
-        margin-left:50%;
-        transform: scale(1.2);
-        transform:rotateZ(30deg);
-
-    }
-    60%{
-        margin-left:60%;
-        transform: scale(1.2);
-        transform:rotateZ(0deg);
-
-    }
-    70%{
-        margin-left:70%;
-        transform:rotateZ(-30deg);
-
-    }
-    80%{
-        margin-left:80%;
-        transform:rotateZ(-45deg);
-        
-
-    }
-    90%{
-        margin-left:90%;
-        transform:rotateZ(-60deg);
-
-    }
-    100%{
-        margin-left:100%;
-        transform:rotateZ(-45deg);
-
-    }
+  100% {
+    transform: translateX(0vw) rotate(0deg) scale(1);
+  }
 }
 
 .logo > span{
@@ -137,22 +103,35 @@
 
 #zomatologo{
     height:200px;
-
-
     opacity:1;
     animation: moveright 5000ms infinite;
-
 
 }
 
 
 #heading{
     font-size:60px;
+    width:20%;
     color:white;
     margin-left: 33%;
-    margin-top: 15%;
+    margin-top: 12%;
+    margin-bottom:10px;
     position: absolute;
     margin-bottom:5%;
+    padding:4px;
+    background-color: black;
+
+}
+
+#subheading{
+    font-size:20px;
+    color:white;
+    /* margin-left: 33%;
+    margin-top: 20%; */
+    position: absolute;
+    /* margin-bottom:5%; */
+    padding:4px;
+    background-color: black;
 }
 
 .dropdown{

@@ -9,6 +9,7 @@ import CuisineCarousel from './quickSearch2';
 const Home = () => {
     var popupcontainer = document.getElementById('popupcontainer');
 
+
     const [showPopup, setShowPopup] = useState(false);
 
     // useEffect(() => {
@@ -28,6 +29,9 @@ const Home = () => {
 
     function becomepopup(){
         var popupcontainer = document.getElementById('popupcontainer');
+        let homecontentcontainer = document.getElementById('homecontentcontainer');
+
+        homecontentcontainer.classList.add('blur-sm');
 
         popupcontainer.classList.remove('none');
     }
@@ -38,7 +42,9 @@ const Home = () => {
 
     function closepopup(){
         var popupcontainer = document.getElementById('popupcontainer');
+        let homecontentcontainer = document.getElementById('homecontentcontainer');
         popupcontainer.classList.add('none');
+        homecontentcontainer.classList.remove('blur-sm');
 
     }
 
@@ -48,14 +54,17 @@ const Home = () => {
     return(
         <>
             <div id="popupcontainer" className="none">
-                <button type="button" className="popupclosebutton" onClick={closepopup}>X</button>
-                <p className=''> Discount 50% Off Today!</p>
+                <button type="button" className="popupclosebutton rounded-md" onClick={closepopup}>X</button>
+                <p className='text-xl text-white flex justify-center items-center'> Discount 50% Off Today!</p>
 
             </div>
-            <Search className='border-red-500'/>
-            <QuickSearch className='border-dashed'/>
-            {/* <CuisineCarousel/> */}
-            <Favrestaurant/>
+            <div id="homecontentcontainer">
+                    <Search className='border-red-500'/>
+                    <QuickSearch className='border-dashed'/>
+                    {/* <CuisineCarousel/> */}
+                    <Favrestaurant/>
+            </div>
+
         </>
     )
 }

@@ -1,17 +1,23 @@
 #popupcontainer{
-    width:800px;
+    width:400px;
     height:400px;
     background-color: black;
     border-radius:25px;
+    background-size:cover;
+    background-position: center;
     color:black;
     font-family: 'Comfortaa', sans-serif;
     border: 1px solid black;
     z-index: 2;
     position:absolute;
     text-align: center;
-    margin-left:22%;
+    margin-left:32%;
     margin-top:200px;
     background-image:url('https://i.ibb.co/6PL4JpQ/download.jpg');
+}
+
+.blur-sm{
+    filter: blur(10px);
 }
 
 .none{

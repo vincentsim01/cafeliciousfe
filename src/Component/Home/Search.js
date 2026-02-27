@@ -9,7 +9,8 @@ const blaUrl=process.env.REACT_APP_API_URL;
 
 const Search = () => {
 
-    const [title] = useState(' Cafe Collections');
+    const [title] = useState(' Cafelicious');
+    const [subtitle] = useState('World Of Cafes At Your Fingertips');
     const [location,setLocation] = useState([]);
     const [restaurant,setRestaurant] = useState([]);
     const [selectedValue, setSelectedValue] = useState('');
@@ -98,14 +99,16 @@ const Search = () => {
         <div id="search">
             <Header2/>
            <div className="logo">
-               <span><div id="zomatologocontainer"><img id="zomatologo" src="https://i.ibb.co/7p9ByZK/cafelicious-circle.png"></img></div></span>
-
-               
+               <span><div id="zomatologocontainer"><img id="zomatologo" src="https://i.ibb.co/7p9ByZK/cafelicious-circle.png"></img></div></span>   
            </div>
 
            <div id="heading">
               {title}
+                <div id="subheading">
+                    {subtitle}
+                </div>
            </div>
+
            <div className="dropdown ">
                 <select onChange={handleCity} className="selectstyle bg-white p-3 rounded-lg shadow-lg mr-2">
                    <option>-----SELECT YOUR CITY-----</option>
