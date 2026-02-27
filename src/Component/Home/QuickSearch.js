@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect, useRef, useCallback } from 'react';
 import './QuickSearch.css';
 import QuickDisplay  from './QuickDisplay';
 import Header2 from '../Header2';

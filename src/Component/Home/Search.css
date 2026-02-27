@@ -1,13 +1,17 @@
 #search{
-    height:550px;
+    height:900px;
     /* border:10px groove green;
      */
     background-image: url('https://i.ibb.co/5WP4pPt/image.jpg');
+    background-size: cover;      /* Makes it fill */
+    background-position: center; 
     background-repeat: no-repeat;
     /* background-size: cover; */
-    background-size: 100% 500px;
+    /* background-size: cover; */
+    /* background-size: 100% 500px; */
     font-family: 'Comfortaa', sans-serif;
     position:relative;
+    border:solid 1px black;
 }
 
 #search::before{

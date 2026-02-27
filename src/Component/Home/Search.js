@@ -106,12 +106,12 @@ const Search = () => {
            <div id="heading">
               {title}
            </div>
-           <div className="dropdown">
-                <select onChange={handleCity} className="selectstyle">
+           <div className="dropdown ">
+                <select onChange={handleCity} className="selectstyle bg-white p-3 rounded-lg shadow-lg mr-2">
                    <option>-----SELECT YOUR CITY-----</option>
                    {renderCity(location)}
                 </select>
-                <select className="selectstyle" onChange={handleSelectChange}>
+                <select className="selectstyle bg-white p-3 rounded-lg shadow-lg ml-2" onChange={handleSelectChange}>
                     <option>-----SELECT YOUR RESTAURANTS-----</option>
                     {renderRestaurant(restaurant)}
                 </select>

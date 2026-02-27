@@ -4,6 +4,7 @@ import QuickSearch from './QuickSearch'
 import './home.css';
 import { useState, useEffect } from 'react';
 import Favrestaurant from '../favrestaurant/favrestaurant';
+import CuisineCarousel from './quickSearch2';
 
 const Home = () => {
     var popupcontainer = document.getElementById('popupcontainer');
@@ -48,11 +49,12 @@ const Home = () => {
         <>
             <div id="popupcontainer" className="none">
                 <button type="button" className="popupclosebutton" onClick={closepopup}>X</button>
-                <p> Discount 50% Off Today!</p>
+                <p className=''> Discount 50% Off Today!</p>
 
             </div>
-            <Search/>
-            <QuickSearch/>
+            <Search className='border-red-500'/>
+            <QuickSearch className='border-dashed'/>
+            {/* <CuisineCarousel/> */}
             <Favrestaurant/>
         </>
     )
