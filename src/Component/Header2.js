@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import {useNavigate,Link} from 'react-router-dom';
 import './Header.css';
 
-const url = "http://localhost:5001"
+const url = "http://localhost:9102/api/auth";
 
 
 const Header2 = () => {
@@ -44,11 +44,11 @@ const Header2 = () => {
                 sessionStorage.setItem('userInfo',JSON.stringify(userData))
                 return(
                     <>
-                        <Link to="/register" className='btn btn-primary'>
-                            <span className="glyphicon glyphicon-user"></span> Hi {userData.name}
+                        <Link to="/register" className=''>
+                            <span className="bg-white border-2-black p-3 rounded-md text-black hover:bg-black hover:text-white transition duration-300 ease-in-out">Hi {userData.name}</span> 
                         </Link> &nbsp;
-                        <button onClick={handleLogout} className='btn btn-success'>
-                            <span className="glyphicon glyphicon-log-out"></span> Logout
+                        <button onClick={handleLogout} className=''>
+                            <span className="bg-white border-2-black p-3 rounded-md text-black hover:bg-black hover:text-white transition duration-300 ease-in-out">Logout</span> 
                         </button>
                     </>
                 )
@@ -56,11 +56,11 @@ const Header2 = () => {
         }else{
             return(
                 <>
-                    <Link to="/register" className='btn btn-primary'>
-                        <span className="glyphicon glyphicon-user"></span> SignUp
+                    <Link to="/register" className=''>
+                        <span className="bg-white border-2 border-black p-3 rounded-md text-black hover:bg-black hover:text-gray-800 transition duration-300 ease-in-out">Signup</span>
                     </Link> &nbsp;
-                    <Link to="/login" className='btn btn-success'>
-                        <span className="glyphicon glyphicon-log-in"></span> Login
+                    <Link to="/login" className=''>
+                        <span className="bg-white border-2 border-black p-3 rounded-md text-black hover:bg-black hover:text-gray-800 transition duration-300 ease-in-out">Login</span>
                     </Link>
                 </>
             )

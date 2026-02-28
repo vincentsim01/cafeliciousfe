@@ -10,9 +10,10 @@ a{
 header{
     height:60px;
     /*border:5px solid hotpink;*/
-    background-color: pink;
+    background-color: rgb(255, 255, 255);
     padding:5px;
     font-family: 'Comfortaa', sans-serif;
+    position:sticky;
 }
 
 
@@ -20,6 +21,7 @@ header{
     font-size: 5px;
     border-radius:15px;
     background-color:cadetblue;
+    padding:20px;
 
 }
 
