@@ -12,8 +12,8 @@ const Register = () => {
         name:'Arpit',
         email:'arpit@gmail.com',
         password:"987654322",
-        phone:"987654322",
-        role:"user"
+        phone:"987654322"
+        // role:"user"
     }
 
     const [values,setValues] = useState(initialValues);

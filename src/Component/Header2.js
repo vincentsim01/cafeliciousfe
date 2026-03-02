@@ -88,6 +88,7 @@ useEffect(() => {
             <span id="menu">
             <Link to="/" className="menumenu">Home</Link>
             <Link to="/about" className="menumenu">About Us</Link>
+            <Link to="/listingFull" className="menumenu">Restaurants</Link>
             <Link to="/contact" className="menumenu">Contact Us</Link>
             {/* <button className="buttonld" onClick={blackbg}>Light Dark</button> */}
             </span>
