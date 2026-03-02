@@ -11,7 +11,7 @@ const Login = () => {
 
     const initialValues = {
         email:'arthur@gmail.com',
-        password:"Arthur"
+        password:"arthur"
     }
 
     const [values,setValues] = useState(initialValues);
@@ -39,10 +39,12 @@ const Login = () => {
         .then((data) => {
             if(data.auth === false){
                 setMessage(data.token)
+                const tokenFromHeader = data.headers.get('x-access-token');
+                console.log("Token from header:", tokenFromHeader);
             }else{
                 sessionStorage.setItem('ltk',data.token)
                 sessionStorage.setItem('userInfo',JSON.stringify(data.user));
-                sessionStorage.setItem('userInfoname',data.name);
+                sessionStorage.setItem('userInfoname',data.user.name);
                 navigate('/')
             }
         })

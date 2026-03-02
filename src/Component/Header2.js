@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import {useNavigate,Link} from 'react-router-dom';
 import './Header.css';
 
-const url = "http://localhost:9102/api/auth";
+const url = "http://localhost:9120/api/auth";
 
 
 const Header2 = () => {
@@ -12,7 +12,7 @@ const Header2 = () => {
 
     useEffect(() => {
         if(sessionStorage.getItem('ltk') != null){
-            fetch(`${url}/api/auth/userInfo`,{
+            fetch(`${url}/userInfo`,{
                 method:'GET',
                 headers:{
                     'x-access-token':sessionStorage.getItem('ltk')

@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header2 from '../Header2';
 
-const url = "http://localhost:5001/api/auth";
+const url = "http://localhost:9120/api/auth";
 
 const Register = () => {
 
