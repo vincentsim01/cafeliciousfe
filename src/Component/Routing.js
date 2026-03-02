@@ -12,6 +12,7 @@ import PlaceOrder from './Order/PlaceOrder';
 import Register from './login/registerComponent';
 import Login from './login/loginComponent';
 import ViewOrder from './Order/ViewOrder'
+import Profile from './Profile/profileLogic';
 import QuickFAQ from './FAQ/faq';
 import QuickPromotion from './promotion/promotion';
 import Menu from './menu/menu';
@@ -41,6 +42,7 @@ const Routing = () => {
                         <Route path="promotion" element={<QuickPromotion/>}/>
                         <Route path="menu/:restaurant_id" element={<Menu/>}/>
                         <Route path="thankyou" element={<QuickThankYou/>}/>
+                        <Route path="profile" element={<Profile/>}/>
 
 
                     </Route>

@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header2 from '../Header2';
 
-const url = "http://localhost:9120/api/auth";
+const url = "https://zomato-big-assignment-2-production.up.railway.app/api/auth";
 
 const Register = () => {
 
@@ -12,7 +12,8 @@ const Register = () => {
         name:'Arpit',
         email:'arpit@gmail.com',
         password:"987654322",
-        phone:"987654322"
+        phone:"987654322",
+        role:"user"
     }
 
     const [values,setValues] = useState(initialValues);
@@ -35,7 +36,20 @@ const Register = () => {
             },
             body:JSON.stringify(values)
         })
-        .then(navigate('/login'))
+        .then(res => res.json()) // parse JSON from backend
+    .then(data => {
+        // Show popup with message
+        alert(data.message || 'No message from server');
+
+        // If registration was successful, navigate to login
+        if (data.message === "User registered successfully") {
+            navigate('/login');
+        }
+    })
+    .catch(err => {
+        console.error("Registration error:", err);
+        alert("Something went wrong. Please try again.");
+    });
     }
 
 

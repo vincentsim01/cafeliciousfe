@@ -52,7 +52,7 @@ useEffect(() => {
                 sessionStorage.setItem('userInfo',JSON.stringify(userData))
                 return(
                     <>
-                        <Link to="/register" className=''>
+                        <Link to="/profile" className=''>
                             <span className="bg-white border-2-black p-3 rounded-md text-black hover:bg-black hover:text-white transition duration-300 ease-in-out">Hi {userData.name}</span> 
                         </Link> &nbsp;
                         <button onClick={handleLogout} className=''>
