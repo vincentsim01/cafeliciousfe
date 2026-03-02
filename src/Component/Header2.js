@@ -10,26 +10,34 @@ const Header2 = () => {
     const [userData,setUserData] = useState('');
     let navigate = useNavigate();
 
-    useEffect(() => {
-        if(sessionStorage.getItem('ltk') != null){
-            fetch(`${url}/userInfo`,{
-                method:'GET',
-                headers:{
-                    'x-access-token':sessionStorage.getItem('ltk')
-                }
-            })
-            .then((res) => res.json())
-            .then((data) => {
-                setUserData(data)
+useEffect(() => {
+    const token = sessionStorage.getItem('ltk');
+    console.log("Token:", sessionStorage.getItem('ltk'));
+    if (!token) return;
 
-            })
+    fetch(`${url}/userInfo`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-access-token': token
         }
-    },[])
+    })
+    .then(async (res) => {
+        if (!res.ok) throw new Error('Unauthorized or server error');
+        const data = await res.json();
+        setUserData(data);
+        console.log(userData);
+    })
+    .catch((err) => {
+        console.log('Fetch user info error:', err);
+    });
+}, []);
 
 
     const handleLogout = () => {
         sessionStorage.removeItem('ltk');
         sessionStorage.removeItem('userInfo');
+        sessionStorage.removeItem('userInfoname');
         setUserData('');
         navigate('/')
     }

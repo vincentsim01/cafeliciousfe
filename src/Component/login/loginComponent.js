@@ -24,32 +24,37 @@ const Login = () => {
         })
     }
 
-    const checkout = () => {
-        // console.log(values)
-        fetch(`${url}/login`,{
-            method: 'POST',
-            headers:{
-                'accept':'application/json',
-                'Content-Type':'application/json',
-                "x-access-token": sessionStorage.getItem("ltk")
-            },
-            body:JSON.stringify(values)
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            if(data.auth === false){
-                setMessage(data.token)
-                const tokenFromHeader = data.headers.get('x-access-token');
-                console.log("Token from header:", tokenFromHeader);
-            }else{
-                sessionStorage.setItem('ltk',data.token)
-                sessionStorage.setItem('userInfo',JSON.stringify(data.user));
-                sessionStorage.setItem('userInfoname',data.user.name);
-                navigate('/')
-            }
-        })
-    }
+const checkout = () => {
+    fetch(`${url}/login`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+    })
+    .then((res) => {
+        // 1️⃣ Read token from header first
+        const tokenFromHeader = res.headers.get('x-access-token');
+        console.log("Token from header:", tokenFromHeader);
 
+        // 2️⃣ Parse JSON body
+        return res.json().then((data) => ({ data, tokenFromHeader }));
+    })
+    .then(({ data, tokenFromHeader }) => {
+        if (!data.auth) {
+            setMessage(data.message); // probably data.message, not data.token
+            console.log(message);
+        } else {
+            // store token from header (preferred) or body
+            sessionStorage.setItem('ltk', tokenFromHeader || data.token);
+            sessionStorage.setItem('userInfo', JSON.stringify(data.user));
+            sessionStorage.setItem('userInfoname', data.user.name);
+            navigate('/');
+        }
+    })
+    .catch((err) => console.log("Login error:", err));
+};
 
 
     return(
