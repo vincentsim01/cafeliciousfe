@@ -1,18 +1,44 @@
 #favrestaurantcontainer{
-    height:500px;
+    height:600px;
     background-color: yellow;
     text-align:center;
 }
 
 .favrestobox{
-    border:1px ridge black;
-    height:450px;
-    width:300px;
-    display:inline-block;
+    height: 500px;
+    width: 300px;
+    display: inline-block;
     margin: 30px;
-    border-radius:15px;
-    background-color:lightgreen;
+    border-radius: 20px;
+    background-color: white;
+    color:black;
+    overflow: hidden;
 
+    /* Soft shadow */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+
+    /* Smooth animation */
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease;
+
+}
+
+.favrestobox {
+  transition: transform 0.3s ease;
+}
+
+/* When hovering the container, shrink ALL boxes */
+#favrestaurantcontainer:hover .favrestobox {
+  transform: scale(0.9);
+  
+}
+
+/* But when hovering a specific box, enlarge that one */
+#favrestaurantcontainer .favrestobox:hover {
+    transform: scale(2);
+    transform: translateY(-10px);
+    transform: rotate(5deg);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
 }
 
 .favrestoimg{
@@ -26,15 +52,37 @@
     background-color: yellow;
     text-align:center;
     font-size: 40px;
+    padding:15px;
+    margin-top:10px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.8);
+    font-family: 'Comfortaa', sans-serif;   
 
 }
 
 .favbutton{
     border-radius:30px;
     border:solid 1px black;
+    padding:10px;
+    font-size:15px;
+    margin-bottom:10px;
+    
+}
+
+.favbutton:hover{
+    background-color: black;
+    color:white;    
+}
+
+.favrating{
+    font-size:20px;
+    font-weight:bold;
+    color:green;
+    font-family: 'Comfortaa', sans-serif;  
 }
 
 .restoName{
     font-size:40px;
     font-style: italic;
+    font-family: 'Comfortaa', sans-serif;  
+    margin-top: 10px;
 }
