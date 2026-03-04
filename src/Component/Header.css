@@ -24,16 +24,27 @@ header{
 
 
 .buttonld{
-    font-size: 5px;
+    font-size: 10px;
     border-radius:15px;
-    background-color:cadetblue;
+    background-color:rgb(228, 255, 73);
     padding:20px;
+    box-shadow: 10px 10px 20px 5px #00000080;
 
+
+}
+
+.buttonld:hover{
+    background-color:cyan;
+    transform:scale(1.05);
+}
+
+.buttonld:active{
+    transform:scale(0.95);
 }
 
 .buttonldcontainer{
     text-align:center;
-    margin-left:300px;
+    
     /* border:1px solid black; */
 
 }

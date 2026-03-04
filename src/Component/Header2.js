@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import {useNavigate,Link} from 'react-router-dom';
 import './Header.css';
 
-const url = "http://localhost:9120/api/auth";
+const url = "https://zomato-big-assignment-2-production.up.railway.app";
 
 
 const Header2 = () => {

@@ -27,7 +27,7 @@ const MenuDisplay=(props)=>{
                             </div>
                             <div class="col-8">
 
-                                <div className="menuparts">Food Name:  {item.menu_name}</div>
+                                <div className="menuparts text-4xl">Food Name:  {item.menu_name}</div>
                                 <div className="menuparts">Description:  {item.description}</div>
                                 <div className="menuparts">Menu Type:  {item.menu_type}</div>
                                 <div className="menuparts">Price:  {item.menu_price}</div>
