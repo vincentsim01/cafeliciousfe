@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Main from './Main';
 import Home from './Home/Home';
 import PrivateRoute from '../middleware/privateRoute';
+import AdminRoute from '../middleware/AdminRoute';
 import Header from './Header';
 import Footer from './Footer';
 import Listing from './Listing/listingLogic';
@@ -18,6 +19,7 @@ import Profile from './Profile/profileLogic';
 import QuickFAQ from './FAQ/faq';
 import QuickPromotion from './promotion/promotion';
 import Menu from './menu/menu';
+import UserModify from './userModify/UserModify';
 import MenuFull from './menu/menuFull';
 import QuickThankYou from './thankyou/thankyou';
 
@@ -48,6 +50,7 @@ const Routing = () => {
                         <Route path="menu" element={<PrivateRoute><MenuFull/></PrivateRoute>}/>
                         <Route path="thankyou" element={<QuickThankYou/>}/>
                         <Route path="profile" element={<PrivateRoute><Profile/></PrivateRoute>}/>
+                        <Route path="userModify" element={<AdminRoute><UserModify/></AdminRoute>}/>
 
 
                     </Route>

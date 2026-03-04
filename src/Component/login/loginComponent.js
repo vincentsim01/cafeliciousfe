@@ -50,6 +50,7 @@ const checkout = () => {
             sessionStorage.setItem('ltk', tokenFromHeader || data.token);
             sessionStorage.setItem('userInfo', JSON.stringify(data.user));
             sessionStorage.setItem('userInfoname', data.user.name);
+            sessionStorage.setItem('userRole', data.user.role);
             navigate('/');
         }
     })
