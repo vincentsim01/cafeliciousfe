@@ -22,6 +22,7 @@ import Menu from './menu/menu';
 import UserModify from './userModify/UserModify';
 import MenuFull from './menu/menuFull';
 import QuickThankYou from './thankyou/thankyou';
+import NotAuthorized from './NotAuthorized/NotAuthorized';
 
 
 const Routing = () => {
@@ -49,6 +50,7 @@ const Routing = () => {
                         <Route path="menu/:restaurant_id" element={<Menu/>}/>
                         <Route path="menu" element={<PrivateRoute><MenuFull/></PrivateRoute>}/>
                         <Route path="thankyou" element={<QuickThankYou/>}/>
+                        <Route path='notauthorized' element={<NotAuthorized/>}/>
                         <Route path="profile" element={<PrivateRoute><Profile/></PrivateRoute>}/>
                         <Route path="userModify" element={<AdminRoute><UserModify/></AdminRoute>}/>
 
