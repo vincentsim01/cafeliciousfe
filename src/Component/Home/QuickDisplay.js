@@ -49,9 +49,9 @@ const QuickDisplay = (props) => {
 
     return (<>
     <div className='m-10 flex justify-between items-center'>
-                <button className="prev border-2 bg-red-500 text-white px-4 py-2 rounded hover:scale-105" onClick={prevmealindex}>Previous &#10094;</button>
+                <button className="prev border-2 bg-yellow-200 text-black px-4 py-2 rounded hover:scale-105" onClick={prevmealindex}>Previous &#10094;</button>
 
-                <button className="next border-2 bg-red-500 text-white px-4 py-2 rounded hover:scale-105" onClick={nextmealindex}>Next &#10095;</button>
+                <button className="next border-2 bg-yellow-200 text-black px-4 py-2 rounded hover:scale-105" onClick={nextmealindex}>Next &#10095;</button>
     </div>
 
             <div id="tileBox">
