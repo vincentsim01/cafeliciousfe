@@ -22,14 +22,26 @@
 
 .gobutton{
     border-radius:20px;
+    padding:20px;
     color:white;
     background-color: black;
     box-shadow: 10px 5px 5px purple;
+    margin-left:5px;
+    transition:all 0.3s ease;
+}
+
+.gobutton:hover{
+    background-color: white;
+    color:black;
+    box-shadow: 10px 5px 5px purple;
+    transform:rotate(5deg) scale(1.1);
+ 
 }
 
 .darkbg{
     background-color:black;
     font-family: 'Times New Roman', Times, serif;
+    color:rgb(55, 51, 51);
 }
 
 
@@ -38,7 +50,7 @@
     width: 350px;
     /* border:2px solid black; */
     border-radius:50%;
-    margin-left: 46%;
+    margin-left: 56%;
     margin-top: 1%;
     position: absolute;
     font-size:90px;
@@ -111,15 +123,16 @@
 
 #heading{
     font-size:60px;
-    width:20%;
+    width:25%;
     color:white;
     margin-left: 33%;
     margin-top: 12%;
     margin-bottom:10px;
     position: absolute;
     margin-bottom:5%;
-    padding:4px;
+    padding:10px;
     background-color: black;
+    border: black solid 1px;
 
 }
 
