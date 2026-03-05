@@ -1,10 +1,14 @@
 import React, { useState,useEffect } from 'react';
 import './favrestaurant.css';
 import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContext } from '../../Context/ThemeContext';
 
 
 
 const Favrestaurant = () =>{
+
+    const {theme, toggleTheme} = useContext(ThemeContext);
 
     const baseUrl = 'https://zomato-big-assignment-2-production.up.railway.app'
 
@@ -26,11 +30,18 @@ var slicedresto=theResto.slice(0,3);
 
     return(
         <>
-        <div id="titlefavresto"><center>Favourite Cafes</center></div>
-            <div id="favrestaurantcontainer">
+        <div id="titlefavresto"
+            style={{backgroundColor: theme === 'light' ? 'yellow' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+        ><center>Favourite Cafes</center></div>
+            <div id="favrestaurantcontainer" 
+                style={{backgroundColor: theme === 'light' ? 'yellow' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+            
+            >
 
                 {slicedresto.map((powerful)=>{return (
-                    <div className="favrestobox">
+                    <div className="favrestobox" 
+                    
+                    >
       
                         <p className="restoName">{powerful.restaurant_name}</p>
                         <br></br>

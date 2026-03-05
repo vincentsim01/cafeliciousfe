@@ -2,9 +2,13 @@ import React, { useState,useEffect, useRef, useCallback } from 'react';
 import './QuickSearch.css';
 import QuickDisplay  from './QuickDisplay';
 import Header2 from '../Header2';
+import { useContext } from 'react';
+import { ThemeContext } from '../../Context/ThemeContext';
 
 const baseUrl = "https://zomato-big-assignment-2-production.up.railway.app";
 const QuickSearch = () => {
+
+    const {theme, toggleTheme} = useContext(ThemeContext);
 
     const [mealType,setMealType] = useState([]);
 
@@ -18,9 +22,13 @@ const QuickSearch = () => {
     },[])
 
     return(
-        <div id="quickSearch">
+        <div id="quickSearch" 
+        
+            style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
 
-            <span className="quickHeading">Cafe Quick Search</span><br></br>
+            <span className="quickHeading" 
+                style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
+                    Cafe Quick Search</span><br></br>
             <span className="quickSubHeading">Find Your Favourite Type Of Food</span>
             <QuickDisplay mealData={mealType}/>
         </div>

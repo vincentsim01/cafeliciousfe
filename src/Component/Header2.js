@@ -1,11 +1,15 @@
 import React,{useState,useEffect} from 'react';
 import {useNavigate,Link} from 'react-router-dom';
 import './Header.css';
+import { useContext } from 'react';
+import { ThemeContext } from '../Context/ThemeContext';
 
 const url = "https://zomato-big-assignment-2-production.up.railway.app";
 
 
 const Header2 = () => {
+
+      const { theme, toggleTheme } = useContext(ThemeContext);
 
     const [userData,setUserData] = useState('');
     let navigate = useNavigate();
@@ -101,24 +105,47 @@ const Header2 = () => {
         document.body.classList.toggle("darkbg");
         
     }
+
+    const conditionalLD = () =>{
+        if(theme === 'light'){
+            return(
+                <button className="buttonld" onClick={toggleTheme}
+                    style={{backgroundColor: theme === 'light' ? 'yellow' : 'black', color: theme === 'light' ? 'black' : 'white', border: theme === 'light' ? '2px solid black' : '2px solid white'}}
+                ><img src='lighton.png' alt="Light Mode" style={{height:20}}></img></button>
+            )
+        }
+        else{
+            return(
+                <button className="buttonld" onClick={toggleTheme}
+                    style={{backgroundColor: theme === 'light' ? 'yellow' : 'black', color: theme === 'light' ? 'black' : 'white', border: theme === 'light' ? '2px solid black' : '2px solid white'}}
+                
+                ><img src='lightoff2.png' alt="Dark Mode" style={{height:40, backgroundColor:'white'}}></img></button>
+            )
+        }
+    }
     
 
     return(
-        <header>
+        <header
+            style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+        >
             {/* <div id="brand">
                 Developer Funnel
             </div> */}
-            <span id="menu">
-            <Link to="/" className="menumenu">Home</Link>
-            <Link to="/about" className="menumenu">About Us</Link>
-            <Link to="/listingFull" className="menumenu">Restaurants</Link>
-            <Link to="/menu" className="menumenu">Menu</Link>
-            <Link to="/contact" className="menumenu">Contact Us</Link>
+            <span id="menu"
+                // style={{ color: theme === 'light' ? 'black' : 'white'}}
+                >
+                    <Link to="/" className="menumenu">Home</Link>
+                    <Link to="/about" className="menumenu">About Us</Link>
+                    <Link to="/listingFull" className="menumenu">Restaurants</Link>
+                    <Link to="/menu" className="menumenu">Menu</Link>
+                    <Link to="/contact" className="menumenu">Contact Us</Link>
             {/* <button className="buttonld" onClick={blackbg}>Light Dark</button> */}
             </span>
-            <span className="buttonldcontainer">
+            {/* <span className="buttonldcontainer">
                 <button className="buttonld" onClick={blackbg}>Light Dark</button>
-            </span>
+            </span> */}
+            {conditionalLD()}
             <div id="social">
                 {conditionalHeader()}
             </div>

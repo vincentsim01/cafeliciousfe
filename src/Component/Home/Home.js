@@ -5,9 +5,13 @@ import './home.css';
 import { useState, useEffect } from 'react';
 import Favrestaurant from '../favrestaurant/favrestaurant';
 import CuisineCarousel from './quickSearch2';
+import { useContext } from 'react';
+import { ThemeContext } from '../../Context/ThemeContext';
 
 const Home = () => {
     var popupcontainer = document.getElementById('popupcontainer');
+
+    const {theme, toggleTheme} = useContext(ThemeContext);
 
 
     const [showPopup, setShowPopup] = useState(false);
@@ -58,7 +62,8 @@ const Home = () => {
                 <p className='text-xl text-white flex justify-center items-center'> Discount 50% Off Today!</p>
 
             </div>
-            <div id="homecontentcontainer">
+            <div id="homecontentcontainer"
+                style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
                     <Search className='border-red-500'/>
                     <QuickSearch className='border-dashed'/>
                     {/* <CuisineCarousel/> */}

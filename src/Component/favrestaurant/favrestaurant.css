@@ -1,6 +1,6 @@
 #favrestaurantcontainer{
     height:700px;
-    background-color: yellow;
+    /* background-color: yellow; */
     text-align:center;
 }
 
@@ -48,8 +48,14 @@
 
 }
 
+.darkbg{
+    background-color:black;
+    font-family: 'Comfortaa', sans-serif;
+    color:rgb(237, 237, 237);
+}
+
 #titlefavresto{
-    background-color: yellow;
+    /* background-color: yellow; */
     text-align:center;
     font-size: 40px;
     padding:15px;
@@ -70,8 +76,8 @@
 }
 
 .favbutton:hover{
-    background-color: black;
-    color:white;    
+    background-color: yellow;
+    color:black;    
     transform: scale(1.1);
 }
 
