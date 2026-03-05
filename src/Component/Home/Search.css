@@ -54,7 +54,7 @@
     margin-top: 1%;
     position: absolute;
     font-size:90px;
-    animation: revolver 4s ease-in-out;
+    animation: revolver 4s linear;
 }
 
 @keyframes revolve{

@@ -31,9 +31,12 @@ var slicedresto=theResto.slice(0,3);
 
                 {slicedresto.map((powerful)=>{return (
                     <div className="favrestobox">
+      
                         <p className="restoName">{powerful.restaurant_name}</p>
                         <br></br>
+                        <img src='/bordertop.png' className='borderimg'></img>
                         <img className="favrestoimg" src={powerful.restaurant_thumb}></img>
+                        <img src='/border bottom.png' className='borderimg'></img>
                         <br></br><br></br>
                         <span className="favrating">Cafe Rating:{powerful.average_rating}</span>
                         <br></br><br></br>
