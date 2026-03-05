@@ -7,6 +7,7 @@ import Favrestaurant from '../favrestaurant/favrestaurant';
 import CuisineCarousel from './quickSearch2';
 import { useContext } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext';
+import Popup from '../Popup/Popup';
 
 const Home = () => {
     var popupcontainer = document.getElementById('popupcontainer');
@@ -57,11 +58,12 @@ const Home = () => {
 
     return(
         <>
-            <div id="popupcontainer" className="none">
-                <button type="button" className="popupclosebutton rounded-md" onClick={closepopup}>X</button>
+            {/* <div id="popupcontainer" className="none">
+                <button type="button" className="popupclosebutton" onClick={closepopup}>X</button>
                 <p className='text-xl text-white flex justify-center items-center'> Discount 50% Off Today!</p>
 
-            </div>
+            </div> */}
+            <Popup closePopup={closepopup}/>
             <div id="homecontentcontainer"
                 style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
                     <Search className='border-red-500'/>

@@ -11,9 +11,9 @@
     z-index: 2;
     position:absolute;
     text-align: center;
-    margin-left:32%;
+    margin-left:35%;
     margin-top:200px;
-    background-image:url('https://i.ibb.co/6PL4JpQ/download.jpg');
+    background-image:url('/public/offer.png');
 }
 
 .blur-sm{
@@ -27,7 +27,8 @@
 .popupclosebutton{
     text-align: right;
     background-color:gray;
-    border-radius:50px;
+    border-radius:100%;
     margin-left:90%;
+    font-size: 20px;
 
 }
