@@ -5,14 +5,14 @@ const QuickDisplay = (props) => {
     const [mealIndex,setMealIndex] = useState(0);
 
     function nextmealindex(){
-        if(mealIndex < props.mealData.length-3){
-            setMealIndex(mealIndex+3);
+        if(mealIndex < props.mealData.length-1){
+            setMealIndex(mealIndex+1);
         }
     }
 
     function prevmealindex(){
         if(mealIndex > 2){
-            setMealIndex(mealIndex-3);
+            setMealIndex(mealIndex-1);
         }else{
             setMealIndex(0);
         }
@@ -22,7 +22,7 @@ const QuickDisplay = (props) => {
     //console.log(">>>",props);
     const listMeal = ({mealData}) =>{
         if(mealData){
-            let sliceData = mealData.slice(mealIndex,3+mealIndex);
+            let sliceData = mealData.slice(mealIndex,1+mealIndex);
             return sliceData.map((item) => {
                 return(
                     <Link to={`/listing/${item.foodtype_id}`} key={item.foodtype_id}>
@@ -47,19 +47,23 @@ const QuickDisplay = (props) => {
         }
     }
 
-    return (<>
-    <div className='m-10 flex justify-between items-center'>
-                <button className="prev border-2 bg-yellow-200 text-black px-4 py-2 rounded hover:scale-105" onClick={prevmealindex}>Previous &#10094;</button>
+    return (
+        <div className='relative text-center'>
+            <div className='m-10 inline-block absolute z-15 top-[-100px] left-0 h-[100%] flex justify-start items-center'>
+                        <button className="prev bg-gradient-to-r from-transparent to-yellow-200 text-black px-8 py-2 rounded hover:scale-105 h-[100px] cursor-pointer" onClick={prevmealindex}>&#10094;</button>
 
-                <button className="next border-2 bg-yellow-200 text-black px-4 py-2 rounded hover:scale-105" onClick={nextmealindex}>Next &#10095;</button>
-    </div>
+                    
+            </div>
+
+            <div className='m-10 inline-block absolute z-15 top-[-100px] right-0 h-[100%] flex justify-end items-center'>
+
+                        <button className="next bg-gradient-to-r from-yellow-200 to-transparent text-black px-8 py-2 rounded hover:scale-105 h-[100px] cursor-pointer" onClick={nextmealindex}>&#10095;</button>
+            </div>
 
             <div id="tileBox">
-
-
                 {listMeal(props)}
-            </div>
-            </>
+             </div>
+        </div>
     )
 
 }

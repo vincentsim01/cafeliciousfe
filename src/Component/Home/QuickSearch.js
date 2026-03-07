@@ -28,8 +28,8 @@ const QuickSearch = () => {
 
             <span className="quickHeading" 
                 style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
-                    Cafe Quick Search</span><br></br>
-            <span className="quickSubHeading">Find Your Favourite Type Of Food</span>
+                    </span><br></br>
+            <span className="quickSubHeading"></span>
             <QuickDisplay mealData={mealType}/>
         </div>
     )

@@ -1,12 +1,17 @@
 /*Quick Search Section*/
 #quickSearch{
     /* height:800px; */
-    display: inline-block;
-    width:80%;
-    margin-left:10%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center; */
+    display:inline-block;
+    width:90%;
+    margin-left:5%;
     margin-top:2%;
     margin-bottom:12%;
     font-family: 'Comfortaa', sans-serif;
+    
   }
   
   .quickHeading{
@@ -39,8 +44,8 @@
   
   
   .tileContainer{
-      height:180px;
-      width:30%;
+      height:20%;
+      width:95%;
       margin-left:2%;
       margin-top:3%;
       box-shadow:10px 20px 10px gray;
@@ -105,25 +110,25 @@
   }
   
   .tileComponent1{
-      height:100%;
-      width:52%;
+      height:30%;
+      width:60%;
       float: left;
   }
   
   .tileComponent1 >img{
-      width:100%;
+      width:95%;
       height:100%
   }
   
   .tileComponent2{
-      width:45%;
+      width:30%;
       float: left;
       margin-left:3%;
       margin-top:15%
   }
   
   .compHeading{
-      font-size:25px;
+      font-size:45px;
       font-weight: bold;
       color:#3b2632
   }
@@ -133,7 +138,7 @@
   }
   
   .compSubHeading{
-      font-size:10px;
+      font-size:30px;
       color:gray
   }
   
