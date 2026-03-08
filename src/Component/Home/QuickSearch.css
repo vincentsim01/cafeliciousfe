@@ -50,12 +50,13 @@
       margin-top:3%;
       box-shadow:10px 20px 10px gray;
       float: left;
-      animation:dancer 5s;
+      /* animation:dancer 5s; */
       border-radius:20px;
+      transition: all 0.3s ease-in-out;
   }
 
   .tileContainer:hover{
-    transform: scale(1.5);
+    /* transform: scale(1.01); */
     background-color: orange;
   }
   
@@ -103,7 +104,7 @@
   
   
   .tileContainer:hover{
-     transform: scale(1.1);
+     transform: scale(1.01);
       /* transform: skewX(30deg); */
       /* transform: rotate(180deg); */
       /* transform: translate(180px, 200px); */

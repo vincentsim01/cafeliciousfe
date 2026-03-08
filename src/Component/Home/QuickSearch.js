@@ -26,9 +26,10 @@ const QuickSearch = () => {
         
             style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
 
-            <span className="quickHeading" 
+            <div className="quickHeading text-3xl font-bold text-center mt-5 animate-bounce" 
                 style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
-                    </span><br></br>
+                    Food Options for Every Mood
+            </div><br></br>
             <span className="quickSubHeading"></span>
             <QuickDisplay mealData={mealType}/>
         </div>
