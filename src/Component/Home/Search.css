@@ -25,15 +25,15 @@
     padding:20px;
     color:white;
     background-color: black;
-    box-shadow: 10px 5px 5px purple;
+    box-shadow: 10px 5px 5px yellow;
     margin-left:5px;
     transition:all 0.3s ease;
 }
 
 .gobutton:hover{
-    background-color: white;
+    background-color: yellow;
     color:black;
-    box-shadow: 10px 5px 5px purple;
+    box-shadow: 10px 5px 5px black;
     transform:rotate(5deg) scale(1.1);
  
 }

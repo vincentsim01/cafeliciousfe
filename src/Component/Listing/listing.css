@@ -42,10 +42,13 @@
 #filter{
     height:700px;
     width:20%;
+    padding:10px;
     float: left;
-    border: 5px solid gray;
+    border: 10px solid yellow;
     border-radius:20px;
-    background-color: #a7a7e4;
+    /* background-color: #a7a7e4; */
+    font-family: 'Comfortaa', sans-serif;
+    cursor:pointer;
 }
 #content{
     width:70%;  
@@ -53,6 +56,24 @@
     margin-left: 5%;
     margin-top: -1%;
 
+}
+
+.radio input{
+    margin:5px;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+
+.radio:hover{
+    transform:scale(1.02);
+    font-weight:600;
+    cursor:pointer;
+    background-color: yellow;
+    width:100%;
+}
+
+.radiotext{
+    margin-left:10px;
 }
 
 

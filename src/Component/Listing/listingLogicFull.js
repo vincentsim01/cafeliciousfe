@@ -47,18 +47,22 @@ const ListingFull = () => {
     return(
         <>
         <Header2/>
-        <div className='listingtitlecontainer'
-            style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
-        >
-            <span><img src='/leftpattern.png' className='patternleft border-1'></img>  </span>          
-            <h1 id='listingtitle' className='text-3xl font-bold mb-4 inline'>All Delicious Cafes</h1>
-            <span><img src='/rightpattern.png' className='patternright border-1'></img></span>    
-        </div>
+
+            <div className='listingtitlecontainer'
+                    style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+                >
+                    <span><img src='/leftpattern.png' className='patternleft border-1'></img>  </span>          
+                    <h1 id='listingtitle' className='text-3xl font-bold mb-4 inline'>All Delicious Cafes</h1>
+                    <span><img src='/rightpattern.png' className='patternright border-1'></img></span>    
+            </div>
+
 
             <div className="row"
             
             style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
             >
+
+
                 <div id="mainListing" className="col">
                     <div id="filter" className="col-md-2">
                         <CuisineFilter foodTypeId={foodTypeId} restPerCuisine={(data) => {setDataPerFilter(data)}}/>
