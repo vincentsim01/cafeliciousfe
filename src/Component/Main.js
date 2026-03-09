@@ -1,6 +1,7 @@
     import React from 'react';
     import {Outlet} from 'react-router-dom';
     import ThemeProvider from '../Context/ThemeProvider';
+    
 
     const Main = () => {
         return(

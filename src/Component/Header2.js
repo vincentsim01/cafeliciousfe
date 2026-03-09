@@ -19,7 +19,7 @@ const Header2 = () => {
         console.log("Token:", sessionStorage.getItem('ltk'));
         if (!token) return;
 
-        fetch(`${url}/userInfo`, {
+        fetch(`${url}/api/auth/userInfo`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ const Header2 = () => {
                 >
                     <Link to="/" className="menumenu">Home</Link>
                     <Link to="/about" className="menumenu">About Us</Link>
-                    <Link to="/listingFull" className="menumenu">Restaurants</Link>
+                    <Link to="/listingFull" className="menumenu">Cafes</Link>
                     <Link to="/menu" className="menumenu">Menu</Link>
                     <Link to="/contact" className="menumenu">Contact Us</Link>
             {/* <button className="buttonld" onClick={blackbg}>Light Dark</button> */}

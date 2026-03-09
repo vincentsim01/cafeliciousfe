@@ -24,7 +24,9 @@ const QuickSearch = () => {
     return(
         <div id="quickSearch" 
         
-            style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
+            style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+            
+            >
 
             <div className="quickHeading text-3xl font-bold text-center mt-5 animate-bounce" 
                 style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>

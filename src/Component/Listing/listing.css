@@ -1,6 +1,42 @@
 #mainListing{
-    margin-left: 12%;
+    margin-left: 5%;
     margin-top: 5%;
+    /* border:solid 5px rgb(255, 255, 255); */
+}
+
+.listingtitlecontainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#listingtitle{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Comfortaa', sans-serif;
+    color: #192f60;
+    display:inline-block;
+    width:30%;
+    text-align: center;
+    /* border:solid 1px black; */
+}
+
+.patternleft{
+    width: 200px;
+    /* border:solid 1px black; */
+    display:inline;
+    /* position: absolute; */
+    left: 0;
+    /* top: 50%; */
+}
+
+.patternright{
+    width: 200px;
+    display:inline;
+    /* position: absolute; */
+    right: 0;
+    /* top: 50%; */
 }
 
 #filter{
@@ -12,7 +48,7 @@
     background-color: #a7a7e4;
 }
 #content{
-    width:65%;
+    width:70%;  
     float: left;
     margin-left: 5%;
     margin-top: -1%;
@@ -20,35 +56,46 @@
 }
 
 
-.darkbg{
+  .darkbg{
     background-color:black;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Comfortaa', sans-serif;
+    color:white;
 }
 
 .item {
-    width: 800px;
-    height: 350px;
+    width: 100%;
+    height: 60%;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     margin-bottom: 20px;
-    padding:10px;
+    padding:3px;
     margin-top:30px;
-    background-color:#ea6060;
-    border-radius: 20px;
+    background-color:#eeff58;
+    border-radius: 10px;
     font-family: 'Comfortaa', sans-serif;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom:30px;
+}
+
+.item:hover{
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.32);
+    transform:scale(1.02);
+
 }
 
 .Image {
-    width: 200px;
-    border-radius: 23px;
+    width: 400px;
+    border-radius: 20px;
     background-color: #ea6060;
     margin-left:5%;
     margin-top:35px;
+    border: solid 3px yellow;
 }
 
 .hotel_name {
     width: 100%;
-    height: 43px;
-    font-family: Poppins;
+    /* height: 43px; */
+    /* font-family: Poppins; */
     font-size: 25px;
     font-weight: 600;
     font-stretch: normal;
@@ -62,13 +109,13 @@
 
 .city_name {
     width: 100%;
-    height: 23px;
-    font-family: Poppins;
+    /* height: 23px; */
+    /* font-family: Poppins; */
     font-size: 16px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
-    line-height: 5;
+    /* line-height: 5; */
     letter-spacing: normal;
     text-align: left;
     color: #192f60;
@@ -79,16 +126,63 @@
     line-height: 5.4;
 }
 
+.ratingnumber{
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #192f60;
+    font-family: 'Comfortaa', sans-serif;
+}
+
 .labelDiv{
-    margin-top:5%;
+    margin-top:2%;
     font-size:25px;
+    /* border:solid 1px black; */
+    display:flex;
+    align-items: center;
 }
 
 .rowi{
-    background-color: #60eaa5;
-    border-radius:50px;
+    background-color: #ffffff;
+    border-radius:10px;
     padding:10px;
-    margin:30px;
+    margin:10px;
     font-family: 'Comfortaa', sans-serif;
     vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mealtypebutton{
+    background-color:yellow;
+    color:black;
+    padding:3px;
+    border-radius:10px;
+}
+
+.foodtypebutton{
+    background-color:orange;
+    color:black;
+    padding:3px;
+    border-radius:10px;
+}
+
+.contact-number{
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #192f60;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.callsection{
+    transition: 0.3s ease;
+    /* right:3px; */
 }

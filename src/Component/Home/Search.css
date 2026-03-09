@@ -124,15 +124,15 @@
 #heading{
     font-size:60px;
     width:25%;
-    color:white;
+    color:black;
     margin-left: 33%;
     margin-top: 12%;
     margin-bottom:10px;
     position: absolute;
     margin-bottom:5%;
     padding:10px;
-    background-color: black;
-    border: black solid 1px;
+    background-color: yellow;
+    /* border: black solid 1px; */
 
 }
 
