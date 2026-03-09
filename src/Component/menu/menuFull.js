@@ -4,11 +4,14 @@ import axios from 'axios';
 import Header2 from '../Header2';
 import MenuDisplay from './menuDisplay';
 import './menuDisplay.css';
+import { useContext } from 'react';
+import { ThemeContext } from '../../Context/ThemeContext';
 
 const baseUrl = "https://zomato-big-assignment-2-production.up.railway.app";
 
 const MenuFull = () => {
     let params = useParams();
+    const {theme, toggleTheme} = useContext(ThemeContext);
 
     const [menuz,setmenuz]=useState();
 
@@ -67,9 +70,27 @@ const MenuFull = () => {
     return(
         <>
         <Header2/>
-        <div id="theContainer">
+            <div className='listingtitlecontainer'
+                    style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+                >
+                    <span><img src='/leftpattern.png' className='patternleft border-1'></img>  </span>          
+                    <h1 id='listingtitle' className='text-3xl font-bold mb-4 inline'>Menu</h1>
+                    <span><img src='/rightpattern.png' className='patternright border-1'></img></span>    
+            </div>
+        <div id="theContainer"
+         style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+        >
             <MenuDisplay listData={menuz} restData={restDetails}/>
         </div>
+
+
+        <div className='listingtitlecontainer'
+                    style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+                >
+                    <span><img src='/leftpattern.png' className='patternleft border-1'></img>  </span>          
+                    <h1 id='listingtitle' className='text-3xl font-bold mb-4 inline'>Menu</h1>
+                    <span><img src='/rightpattern.png' className='patternright border-1'></img></span>    
+            </div>
   
         
         

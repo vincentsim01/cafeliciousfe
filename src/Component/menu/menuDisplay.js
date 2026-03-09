@@ -1,9 +1,12 @@
 import React from 'react';
 import {useSearchParams,Link} from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContext } from '../../Context/ThemeContext';
 
 const MenuDisplay=(props)=>{
 
     let [searchParams] = useSearchParams();
+    const {theme, toggleTheme} = useContext(ThemeContext);
 
     let restId = searchParams.getAll('restId');
 
@@ -19,15 +22,22 @@ const MenuDisplay=(props)=>{
                 // console.log("This is ListData"+listData);
                 return listData.map((item) => {
                     return(
-                        <div class="container-fluid menucontainer">
-                            <div class="col-4">
+                        <div class="container-fluid menucontainer"
+                        
+                        
+                        style={{backgroundColor: theme === 'light' ? 'yellow' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
+                            <div className="thumbnailcontainer">
 
                                 <img src={item.menu_image} className="menuthumb"></img>
 
                             </div>
-                            <div class="col-8">
+                            <div class=" menudescription"
+                            
+                                 style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+                            >
 
-                                <div className="menuparts text-4xl">Food Name:  {item.menu_name}</div>
+                                <div className="menuparts text-lg text-center font-bold">Food Name:  {item.menu_name}</div>
+                                <br></br><br></br>
                                 <div className="menuparts">Description:  {item.description}</div>
                                 <div className="menuparts">Menu Type:  {item.menu_type}</div>
                                 <div className="menuparts">Price:  {item.menu_price}</div>
@@ -68,7 +78,7 @@ const MenuDisplay=(props)=>{
                     return(
 
 
-                                <div>
+                                <div className='menuDetails'>
 
                                     {item2.restaurant_name}
 
