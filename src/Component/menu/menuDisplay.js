@@ -37,10 +37,16 @@ const MenuDisplay=(props)=>{
                             >
 
                                 <div className="menuparts text-lg text-center font-bold">Food Name:  {item.menu_name}</div>
+                                <div className='flex justify-center'>
+                                    <br></br>
+                                     <span className=" rounded-md p-3 text-3xl border border-black border-2 hover:shadow-md">${item.menu_price}</span>
+                                </div>
+                               
                                 <br></br><br></br>
-                                <div className="menuparts">Description:  {item.description}</div>
-                                <div className="menuparts">Menu Type:  {item.menu_type}</div>
-                                <div className="menuparts">Price:  {item.menu_price}</div>
+                                <div className="menuparts">{item.description}</div>
+
+                                <br></br><br></br>
+                                <span className="menuparts p-3 bg-green-300 rounded-md text-xl text-right font-bold"> {item.menu_type}</span>
 
                                 {/* <Link to={`/details?restId=${item.restaurant_id}`} class="btn btn-info">Back to {restaurantData(props)} Page</Link> */}
 
