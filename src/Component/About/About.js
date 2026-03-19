@@ -10,9 +10,13 @@ const QuickAbout = () => {
     return(
         <>
         <Header2/>
+        <section id='aboutbanner'>
+            <span></span>
+            <img src='../cafestaff2.PNG' class='w-[100%]' alt='cafestaff' title='cafestaff'></img>
+        </section>
         <div id="AboutContainer">
             <div id='AboutHeaderContainer'>
-                <span id="AboutHeader"><u>About Cafelicious</u></span><br></br>
+                <span id="AboutHeader" class='font-bold'><u>About Cafelicious</u></span><br></br>
             </div>
             <br></br>
             <span className="AboutSubHeader">
