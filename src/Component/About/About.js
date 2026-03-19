@@ -49,9 +49,12 @@ const QuickAbout = () => {
             </div>
           
         </section>
-        <section>
-            <span class='text-3xl font-bold underline font-comfortaa'>Gallery</span>
-            <div class='grid grid-cols-5 grid-rows-3 bg-yellow-200 p-5 gap-3'>
+        <section class='bg-yellow-200 p-5'>
+            <div class='flex justify-center mt-5'>
+                <span class='text-3xl font-bold underline font-comfortaa'>Gallery</span>
+            </div>
+
+            <div class='grid grid-cols-5 grid-rows-3  p-5 gap-3'>
                 <div class='col-start-1 col-end-2  flex justify-center'>
                     <img src='./cafe1.jpg' class='rounded-md'></img>
                 </div>
