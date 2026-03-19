@@ -50,15 +50,27 @@ const QuickAbout = () => {
           
         </section>
         <section>
-            <div class='grid grid-cols-5 grid-rows-3 bg-yellow-200 pt-5'>
-                <div class='col-start-1 col-start-2 border'>
-                    <img src='./cafe1.jpg'></img>
+            <div class='grid grid-cols-5 grid-rows-3 bg-yellow-200 p-5 gap-3'>
+                <div class='col-start-1 col-end-2  flex justify-center'>
+                    <img src='./cafe1.jpg' class='rounded-md'></img>
                 </div>
-                <div class='col-start-2 col-start-3'>
-                    <img src='./cafebanner.png' class='w-full'></img>
+                <div class='col-start-2 col-end-4 flex justify-center'>
+                    <img src='./cafebanner.png' class='w-full rounded-md'></img>
                 </div>
-                <div class='col-start-4 col-start-5 border'>
-                    <img src='./cafe3.jpg'></img>
+                <div class='col-start-4 col-end-6 flex-justify-center'>
+                    <img src='./cafestaff.PNG' class='rounded-md'></img>
+                </div>
+                <div class='col-start-1 col-end-6 row-start-2 row-end-3 flex justify-center'>
+                    <img src='./allstaff.PNG' class='rounded-md'></img>
+                </div>
+                <div class='col-start-1 col-end-2 row-start-3 row-end-4 flex justify-center'>
+                    <img src='./coffee.PNG' class='rounded-md'></img>
+                </div>
+                <div class='col-start-2 col-end-4 row-start-3 row-end-4 flex justify-center'>
+                    <img src='./tea.PNG' class='w-full rounded-md'></img>
+                </div>
+                <div class='col-start-4 col-end-6 row-start-3 row-end-4 flex-justify-center'>
+                    <img src='./croissant.PNG' class='rounded-md'></img>
                 </div>
 
             </div>
