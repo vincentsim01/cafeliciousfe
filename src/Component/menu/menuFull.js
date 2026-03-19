@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header2 from '../Header2';
 import MenuDisplay from './menuDisplay';
 import './menuDisplay.css';
+import TypeFilter from '../Menufilter/Typefilter';
 import { useContext } from 'react';
 import { ThemeContext } from '../../Context/ThemeContext';
 
@@ -63,7 +64,9 @@ const MenuFull = () => {
 
 // console.log("This is the menuz "+menuz);
 
-
+    const setDataPerFilter = (data) => {
+        setmenuz(data)
+    }
 
 
 
@@ -79,8 +82,15 @@ const MenuFull = () => {
             </div>
         <div id="theContainer"
          style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+         className=' relative flex justify-center items-start'
         >
-            <MenuDisplay listData={menuz} restData={restDetails}/>
+            <span className='inline-block w-[20%] border border-black '>
+                <TypeFilter restpertype={(data)=>{setDataPerFilter(data)}} className=''></TypeFilter>
+            </span>
+            <span className='inline-block w-[60%] border border-black bottom-0'>
+                <MenuDisplay listData={menuz} restData={restDetails}/>
+            </span>
+
         </div>
 
 

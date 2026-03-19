@@ -1,46 +1,61 @@
-import React from 'react';
+import React,{useState} from 'react';
 import axios from 'axios';
 
 const baseUrl = "https://zomato-big-assignment-2-production.up.railway.app";
 
 const TypeFilter = (props) => {
-
+const [selected, setSelected] = useState("");
     const handleFilter = (event) => {
-        let foodtypeId = props.foodTypeId;
-
-        let costUrl = "";
+        let foodtype = event.target.value;
+        setSelected(foodtype);
+        let typeUrl = "";
         if(event.target.value === ""){
-            costUrl = `${baseUrl}/filtery/${foodtypeId}`
+            typeUrl = `${baseUrl}/menu`
         }else{
-            costUrl = `${baseUrl}/filtery/${foodtypeId}?lcost=${lcost}&hcost=${hcost}`
+            typeUrl = `${baseUrl}/menu?menu_type=${foodtype}`
         }
 
-        axios.get(costUrl)
-            .then((res) => {props.restPerCost(res.data)})
+        axios.get(typeUrl)
+            .then((res) => {props.restpertype(res.data)})
 
     }
 
     return(
         <>
-            <center><h3>Cost Filter</h3></center>
-            <div style={{marginLeft:'15%'}} onChange={handleFilter}>
+            <center><h3>Type Filter</h3></center>
+            <div style={{marginLeft:'15%'}} className='w-[30%] inline-block'>
                 <label className='radio'>
-                    <input type="radio" name="cuisine" value=""/><span className='radiotext'>All</span>
+                    <input type="radio" name="type" value=""/><span className='radiotext'  onChange={handleFilter}>All</span>
                 </label><br></br>
                 <label className='radio'>
-                    <input type="radio" name="cuisine" value="0.1-1"/><span className='radiotext'>0-1</span>
+                    <input type="radio" name="type" value="Chinese"/><span className='radiotext'  onChange={handleFilter}>Chinese</span>
                 </label><br></br>
                 <label className='radio'>
-                    <input type="radio" name="cuisine" value="1.1-3.1"/><span className='radiotext'>1-3</span>
+                    <input type="radio" name="type" value="Japanese"/><span className='radiotext'  onChange={handleFilter}>Japanese</span>
                 </label><br></br>
                 <label className='radio'>
-                    <input type="radio" name="cuisine" value="3.1-6"/><span className='radiotext'>3.1-6</span>
+                    <input type="radio" name="type" value="German"/><span className='radiotext'  onChange={handleFilter}>German</span>
                 </label><br></br>
                 <label className='radio'>
-                    <input type="radio" name="cuisine" value="6.1-10"/><span className='radiotext'>6.1-10</span>    
+                    <input type="radio" name="type" value="Indian"/><span className='radiotext'  onChange={handleFilter}>Indian</span>    
                 </label><br></br>
                 <label className='radio'>
-                    <input type="radio" name="cuisine" value="10.1-15"/><span className='radiotext'>10-15</span>
+                    <input type="radio" name="type" value="Italian"/><span className='radiotext'  onChange={handleFilter}>Italian</span>
+                </label>
+                <label className='radio'>
+                    <input type="radio" name="type" value="French"/><span className='radiotext'  onChange={handleFilter}>French</span>
+                </label>
+                <label className='radio'>
+                    <input type="radio" name="type" value="Caribbean"/><span className='radiotext'  onChange={handleFilter}>Caribbean</span>
+                </label>
+                <label className='radio'>
+                    <input type="radio" name="type" value="Malaysian"/><span className='radiotext'  onChange={handleFilter}>Malaysian</span>
+                </label>
+                <label className='radio'>
+                    <input type="radio" name="type" value="American"/><span className='radiotext'  onChange={handleFilter}>American</span>
+                </label>
+                <label className='radio'>
+                    <input type="radio" name="type" value="Indonesian"/><span className='radiotext'  onChange={handleFilter}>Indonesian</span>
                 </label>
             </div>
         </>
