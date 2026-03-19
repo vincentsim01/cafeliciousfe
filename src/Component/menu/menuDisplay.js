@@ -36,7 +36,7 @@ const MenuDisplay=(props)=>{
                                  style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
                             >
 
-                                <div className="menuparts text-lg text-center font-bold">Food Name:  {item.menu_name}</div>
+                                <div className="menuparts text-lg text-center font-bold">{item.menu_name}</div>
                                 <div className='flex justify-center'>
                                     <br></br>
                                      <span className=" rounded-md p-3 text-3xl border border-black border-2 hover:shadow-md">${item.menu_price}</span>
