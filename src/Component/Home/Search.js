@@ -109,7 +109,7 @@ const Search = () => {
                 </div>
            </div>
 
-           <div className="dropdown ">
+           <div className="dropdown">
                 <select onChange={handleCity} className="selectstyle bg-white text-black p-3 rounded-lg shadow-lg mr-2">
                    <option>-----SELECT YOUR CITY-----</option>
                    {renderCity(location)}
