@@ -65,6 +65,7 @@ const MenuFull = () => {
 // console.log("This is the menuz "+menuz);
 
     const setDataPerFilter = (data) => {
+        console.log(data)
         setmenuz(data)
     }
 
@@ -82,14 +83,21 @@ const MenuFull = () => {
             </div>
         <div id="theContainer"
          style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
-         className=' relative flex justify-center items-start'
+         className=' border border-black p-2'
         >
-            <span className='inline-block w-[20%] border border-black '>
-                <TypeFilter restpertype={(data)=>{setDataPerFilter(data)}} className=''></TypeFilter>
-            </span>
-            <span className='inline-block w-[60%] border border-black bottom-0'>
-                <MenuDisplay listData={menuz} restData={restDetails}/>
-            </span>
+            <div className='flex justify-center '>
+                
+                <div className=''>
+                     <TypeFilter restpertype={(data)=>{setDataPerFilter(data)}} className='w-[100%]'></TypeFilter>
+                </div>
+               
+            </div>
+            <div className=''>
+                <div className=''>
+                    <MenuDisplay listData={menuz} restData={restDetails}/>
+                </div>
+
+            </div>
 
         </div>
 

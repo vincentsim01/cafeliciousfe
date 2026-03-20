@@ -10,29 +10,21 @@ const MenuDisplay=(props)=>{
 
     let restId = searchParams.getAll('restId');
 
-    
-    sessionStorage.setItem('restId2',restId);      
-
-
+    sessionStorage.setItem('restId2',restId);    
 
     const renderData = ({listData}) => {
-
         if(listData){
             if(listData.length > 0 ){
                 // console.log("This is ListData"+listData);
                 return listData.map((item) => {
                     return(
-                        <div class="container-fluid menucontainer"
-                        
-                        
-                        style={{backgroundColor: theme === 'light' ? 'yellow' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
+                        <div className="menucontainer"
+                        style={{backgroundColor: theme === 'light' ? 'yellow' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+                        >
                             <div className="thumbnailcontainer">
-
                                 <img src={item.menu_image} className="menuthumb"></img>
-
                             </div>
                             <div class=" menudescription"
-                            
                                  style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
                             >
 
@@ -51,14 +43,9 @@ const MenuDisplay=(props)=>{
                                 {/* <Link to={`/details?restId=${item.restaurant_id}`} class="btn btn-info">Back to {restaurantData(props)} Page</Link> */}
 
                             </div>
-
-
-    
                         </div>
                     )
                 })
-
-
 
             }
         }
@@ -82,25 +69,12 @@ const MenuDisplay=(props)=>{
                 // console.log("This is ListData"+listData);
                 return restData.map((item2) => {
                     return(
-
-
                                 <div className='menuDetails'>
-
                                     {item2.restaurant_name}
-
                                     <br/><br/>
-
                                     <Link to={`/details?restId=${item2.restaurant_id}`} className="btn btn-info">Back to {item2.restaurant_name} Page</Link>
-                                   
-                      
-
-
-                                </div>
-                            
-                                
-         
+                               </div>     
                     )
-            
                 })
             }
         }
@@ -111,16 +85,13 @@ const MenuDisplay=(props)=>{
 
 
     return(
-        <>
-        <div id="contenta">
 
-            <span id="thisisthe">This is the menu from cafe: {restaurantData(props)}</span>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;<br/>
-            {renderData(props)}
-            
-        </div>
-        </>
+            <div id="contenta">
+                <span id="thisisthe">This is the menu from cafe: {restaurantData(props)}</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                {renderData(props)}
+            </div>
+    
     )
 
 

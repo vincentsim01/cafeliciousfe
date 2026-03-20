@@ -7,6 +7,7 @@ const TypeFilter = (props) => {
 const [selected, setSelected] = useState("");
     const handleFilter = (event) => {
         let foodtype = event.target.value;
+        console.log("the event target value is"+event.target.value);
         setSelected(foodtype);
         let typeUrl = "";
         if(event.target.value === ""){
@@ -21,10 +22,23 @@ const [selected, setSelected] = useState("");
     }
 
     return(
-        <>
-            <center><h3>Type Filter</h3></center>
-            <div style={{marginLeft:'15%'}} className='w-[30%] inline-block'>
-                <label className='radio'>
+        <div className='inline-block'>
+            <center><h3 className='font-Comfortaa'>Type Filter</h3></center>
+            <div style={{marginLeft:'0%'}} className='p-8' onChange={handleFilter}>
+                <select onChange={handleFilter} className='border w-full'>
+                    <option value="">All</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="German">German</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="French">French</option>
+                    <option value="Caribbean">Carribean</option>
+                    <option value="Malaysian">Malaysian</option>
+                    <option value="American">American</option>
+                    <option value="Indonesian">Indonesian</option>
+                </select>
+                {/* <label className='radio'>
                     <input type="radio" name="type" value=""/><span className='radiotext'  onChange={handleFilter}>All</span>
                 </label><br></br>
                 <label className='radio'>
@@ -41,24 +55,24 @@ const [selected, setSelected] = useState("");
                 </label><br></br>
                 <label className='radio'>
                     <input type="radio" name="type" value="Italian"/><span className='radiotext'  onChange={handleFilter}>Italian</span>
-                </label>
+                </label><br></br>
                 <label className='radio'>
                     <input type="radio" name="type" value="French"/><span className='radiotext'  onChange={handleFilter}>French</span>
-                </label>
+                </label><br></br>
                 <label className='radio'>
                     <input type="radio" name="type" value="Caribbean"/><span className='radiotext'  onChange={handleFilter}>Caribbean</span>
-                </label>
+                </label><br></br>
                 <label className='radio'>
                     <input type="radio" name="type" value="Malaysian"/><span className='radiotext'  onChange={handleFilter}>Malaysian</span>
-                </label>
+                </label><br></br>
                 <label className='radio'>
                     <input type="radio" name="type" value="American"/><span className='radiotext'  onChange={handleFilter}>American</span>
-                </label>
+                </label><br></br>
                 <label className='radio'>
                     <input type="radio" name="type" value="Indonesian"/><span className='radiotext'  onChange={handleFilter}>Indonesian</span>
-                </label>
+                </label> */}
             </div>
-        </>
+        </div>
     )
 }
 
