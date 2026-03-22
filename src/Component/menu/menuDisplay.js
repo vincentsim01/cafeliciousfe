@@ -49,17 +49,16 @@ const MenuDisplay=(props)=>{
 
             }
         }
-        // else{
-        //     return(
+        else{
+            return(
 
-        //     <>                
-        //         <h1>
-        //         Ini saja dapatnya: ${item.menu_name}
-        //         </h1>
-        //     </>
+                <div className='flex flex-wrap items-center justify-center'>
+                    <h2>Loading....</h2>
+                    <img src="https://i.ibb.co/N71KDpT/loading-buffering.gif" alt="loader"/>
+                </div>
 
-        //     )
-        // }
+            )
+        }
     }
 
 

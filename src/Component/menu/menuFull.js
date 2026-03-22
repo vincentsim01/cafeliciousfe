@@ -13,6 +13,7 @@ const baseUrl = "https://zomato-big-assignment-2-production.up.railway.app";
 const MenuFull = () => {
     let params = useParams();
     const {theme, toggleTheme} = useContext(ThemeContext);
+    const [loading,setloading] = useState(true);
 
     const [menuz,setmenuz]=useState();
 
@@ -48,11 +49,16 @@ const MenuFull = () => {
     },[]);
 
     useEffect(() => {  
+        setloading(true)
         sessionStorage.setItem('restId2',restaurant_Id)      
         fetch(`${baseUrl}/details?restId=${restaurant_Id}`,{method:'GET'})
             .then((res) =>  res.json())
             .then((data) => {
-                setrestDetails(data);
+                setTimeout(()=>{
+                    setrestDetails(data);
+                    setloading(false)
+                },500)
+
 
     })},[]);
 
@@ -65,7 +71,7 @@ const MenuFull = () => {
 // console.log("This is the menuz "+menuz);
 
     const setDataPerFilter = (data) => {
-        console.log(data)
+
         setmenuz(data)
     }
 
@@ -74,6 +80,7 @@ const MenuFull = () => {
     return(
         <>
         <Header2/>
+        
             <div className='listingtitlecontainer'
                     style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
                 >
@@ -81,7 +88,17 @@ const MenuFull = () => {
                     <h1 id='listingtitle' className='text-3xl font-bold mb-4 inline'>Menu</h1>
                     <span><img src='/rightpattern.png' className='patternright border-1'></img></span>    
             </div>
-        <div id="theContainer"
+
+            {loading ? 
+            (
+                <div className='flex flex-wrap justify-center'>
+                    <h2>Loading....</h2>
+                    <img src="https://i.ibb.co/N71KDpT/loading-buffering.gif" alt="loader"/>
+                </div>
+
+            ):
+            (
+                    <div id="theContainer"
          style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
          className=' border border-black p-2'
         >
@@ -100,6 +117,29 @@ const MenuFull = () => {
             </div>
 
         </div>
+
+        )}
+
+
+        {/* <div id="theContainer"
+         style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+         className=' border border-black p-2'
+        >
+            <div className='flex justify-center '>
+                
+                <div className=''>
+                     <TypeFilter restpertype={(data)=>{setDataPerFilter(data)}} className='w-[100%]'></TypeFilter>
+                </div>
+               
+            </div>
+            <div className=''>
+                <div className=''>
+                    <MenuDisplay listData={menuz} restData={restDetails}/>
+                </div>
+
+            </div>
+
+        </div> */}
 
 
         <div className='listingtitlecontainer'
