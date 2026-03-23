@@ -10,7 +10,7 @@ const baseUrl="https://zomato-big-assignment-2-production.up.railway.app";
     const ContactForm = () => {
 
       let navigate = useNavigate();
-
+    const [loading, setloading] = useState(false)
       const initialValues = {
         name:'Ronnies',
         email:'ronnie@gmail.com',
@@ -31,7 +31,7 @@ const baseUrl="https://zomato-big-assignment-2-production.up.railway.app";
       console.log("these are the values"+Object.values(values));
 
       const checkout = () => {
-
+        setloading(true);
         fetch(`${baseUrl}/contactus`,{
             method: 'POST',
             headers:{
@@ -42,7 +42,10 @@ const baseUrl="https://zomato-big-assignment-2-production.up.railway.app";
 
         })
         // .then(console.log("Success"));
-        .then(navigate('/thankyou'))
+        .then(
+            setTimeout(() => {navigate('/thankyou');},1000)
+            
+        )
     }
 
   
@@ -52,7 +55,7 @@ const baseUrl="https://zomato-big-assignment-2-production.up.railway.app";
     return(
         <>
                     <Header2/>
-        <div className="container-fluid p-5">
+        <div className={`container-fluid p-5 ${loading ? "opacity-20 scale-95" : "opacity-100"}`}>
             <br></br>
 
             <span className="ContactHeader">Contact Cafelicious</span><br></br>
