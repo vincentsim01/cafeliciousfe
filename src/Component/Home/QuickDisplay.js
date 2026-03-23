@@ -22,9 +22,9 @@ const QuickDisplay = (props) => {
         if(mealData){
             return mealData.map((item) => {
                 return(
-                    <div key={item.foodtype_id} className='inline-block m-2 ml-2 mt-5'>
+                    <div key={item.foodtype_id} className='inline-block mt-5' id='allfoodlistcontainer'>
                         <Link to={`/listing/${item.foodtype_id}`}>
-                            <span className='text-lg font-bold text-gray-800 hover:text-orange-500'>{item.foodtype}</span>
+                            <span className='text-lg font-bold text-gray-800 hover:text-orange-500' id='allfoodlist'>{item.foodtype}</span>
                         </Link>
 
                     </div>
