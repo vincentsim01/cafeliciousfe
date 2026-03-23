@@ -223,7 +223,7 @@ select{
     .logo{
         height:350px;
         width: 350px;
-        border:2px solid black;
+        /* border:2px solid black; */
         border-radius:50%;
         padding:2px;
         display:block;
@@ -270,24 +270,159 @@ select{
 }
 
 /* Tablet */
-@media (max-width: 768px) { }
+@media (max-width: 768px) { 
+    #search{
+        height:100vh;
+        background-image: url('../../../public/cafebanner.png');
+        /* background-image: url('https://i.ibb.co/5WP4pPt/image.jpg'); */
+        background-size: cover;      /* Makes it fill */
+        background-position: center; 
+        background-repeat: no-repeat;
+        font-family: 'Comfortaa', sans-serif;
+        position:relative;
+    }
+
+    .logo{
+        height:350px;
+        width: 350px;
+        /* border:2px solid black; */
+        border-radius:50%;
+        margin-left: 56%;
+        margin-top: 1%;
+        margin-bottom:1%;
+        position: relative;
+        font-size:90px;
+        animation: revolver 4s linear;
+    }
+
+#heading{
+    font-size:60px;
+    width:75%;
+    color:black;
+    display:block;
+    /* margin-left: 33%; */
+    /* margin-top: 12%; */
+    margin-bottom:10px;
+    position: absolute;
+    top:10%;
+    margin-bottom:1%;
+    padding:10px;
+    /* border: solid 1px black; */
+    background-color: yellow;
+    /* border: black solid 1px; */
+
+}
+
+#subheading{
+    font-size:20px;
+    color:white;
+    /* margin-left: 33%;
+    margin-top: 20%; */
+    position: absolute;
+    /* margin-bottom:5%; */
+    padding:4px;
+    background-color: black;
+}
+
+.dropdown{
+    height:60px;
+    width:50%;
+    /* border:2px solid white; */
+    margin-left: 30%;
+    margin-top: 22%;
+    top:20%;
+    position: absolute;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+select{
+    height:60px;
+    width:40%;
+    font-size:20px;
+    text-align: center;
+    margin-bottom: 10%;
+}
+}
 
 /* Laptop */
 @media (max-width: 1024px) {
-    /* #heading{
+    #search{
+        height:100vh;
+        background-image: url('../../../public/cafebanner.png');
+        /* background-image: url('https://i.ibb.co/5WP4pPt/image.jpg'); */
+        background-size: cover;      /* Makes it fill */
+        background-position: center; 
+        background-repeat: no-repeat;
+        font-family: 'Comfortaa', sans-serif;
+        position:relative;
+    }
+
+    .logo{
+        height:350px;
+        width: 350px;
+        /* border:2px solid black; */
+        border-radius:50%;
+        margin-left: 56%;
+        margin-top: 1%;
+        margin-bottom:1%;
+        position: relative;
+        font-size:90px;
+        animation: revolver 4s linear;
+    }
+
+#heading{
     font-size:60px;
-    width:25%;
+    width:75%;
     color:black;
-    margin-left: 33%;
-    margin-top: 12%;
+    display:block;
+    /* margin-left: 33%; */
+    /* margin-top: 12%; */
     margin-bottom:10px;
     position: absolute;
-    margin-bottom:5%;
+    top:10%;
+    margin-bottom:1%;
     padding:10px;
+    /* border: solid 1px black; */
     background-color: yellow;
-  
+    /* border: black solid 1px; */
 
-} */
+}
+
+#subheading{
+    font-size:20px;
+    color:white;
+    /* margin-left: 33%;
+    margin-top: 20%; */
+    position: absolute;
+    /* margin-bottom:5%; */
+    padding:4px;
+    background-color: black;
+}
+
+.dropdown{
+    height:60px;
+    width:50%;
+    /* border:2px solid white; */
+    margin-left: 30%;
+    margin-top: 22%;
+    top:20%;
+    position: absolute;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+select{
+    height:60px;
+    width:40%;
+    font-size:20px;
+    text-align: center;
+    margin-bottom: 10%;
+}
  }
 
 /* Desktop */
