@@ -144,18 +144,21 @@ const Header2 = () => {
                     <Link to="/contact" className="menumenu">Contact Us</Link>
             </span>
             {/* mobile */}
-            <span id="menu" className='md:hidden' onClick={burgertoggle}>
+            <span id="menu" className='md:hidden cursor-pointer hover:rotate-5' onClick={burgertoggle}>
                 <i class="fa-solid fa-bars"></i>
             </span>
 
             {burger ? (
-            <div className='absolute top-15 left-0 w-[50%] border'  style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
-                <button onClick={burgertoggle} className='rounded-full hover:shadow-md right-0 top-0'>X</button>
-                <Link to="/" className="menumenu">Home</Link><br></br>
-                <Link to="/about" className="menumenu">About Us</Link><br></br>
-                <Link to="/listingFull" className="menumenu">Cafes</Link><br></br>
-                <Link to="/menu" className="menumenu">Menu</Link><br></br>
-                <Link to="/contact" className="menumenu">Contact Us</Link>
+            <div className='absolute top-15 left-0 w-[80%] border shadow-md rounded-md p-3'  style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
+                <div className='text-right'>
+                    <button onClick={burgertoggle} className=' rounded-full hover:shadow-md'>X</button>
+                </div>
+                <br></br>
+                <Link to="/" className="menumenu mt-2 mb-2 hover:bg-yellow-200">Home</Link><br></br>
+                <Link to="/about" className="menumenu mt-2 mb-2 hover:bg-yellow-200">About Us</Link><br></br>
+                <Link to="/listingFull" className="menumenu mt-2 mb-2 hover:bg-yellow-200">Cafes</Link><br></br>
+                <Link to="/menu" className="menumenu mt-2 mb-2 hover:bg-yellow-200">Menu</Link><br></br>
+                <Link to="/contact" className="menumenu mt-2 mb-2 hover:bg-yellow-200">Contact Us</Link>
             </div>
             ) : null}
 
