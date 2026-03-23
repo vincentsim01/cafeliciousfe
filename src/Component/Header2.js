@@ -10,6 +10,7 @@ const url = "https://zomato-big-assignment-2-production.up.railway.app";
 const Header2 = () => {
 
       const { theme, toggleTheme } = useContext(ThemeContext);
+      const [burger, setburger] = useState(false);
 
     const [userData,setUserData] = useState('');
     let navigate = useNavigate();
@@ -123,28 +124,41 @@ const Header2 = () => {
             )
         }
     }
+
+    function burgertoggle(){
+        setburger((prev) => !prev)
+    }
     
 
     return(
         <header
             style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+            className=''
         >
-            {/* <div id="brand">
-                Developer Funnel
-            </div> */}
-            <span id="menu"
-                // style={{ color: theme === 'light' ? 'black' : 'white'}}
-                >
+            {/* desktop */}
+            <span id="menu" className='hidden md:block'>
                     <Link to="/" className="menumenu">Home</Link>
                     <Link to="/about" className="menumenu">About Us</Link>
                     <Link to="/listingFull" className="menumenu">Cafes</Link>
                     <Link to="/menu" className="menumenu">Menu</Link>
                     <Link to="/contact" className="menumenu">Contact Us</Link>
-            {/* <button className="buttonld" onClick={blackbg}>Light Dark</button> */}
             </span>
-            {/* <span className="buttonldcontainer">
-                <button className="buttonld" onClick={blackbg}>Light Dark</button>
-            </span> */}
+            {/* mobile */}
+            <span id="menu" className='md:hidden' onClick={burgertoggle}>
+                <i class="fa-solid fa-bars"></i>
+            </span>
+
+            {burger ? (
+            <span>
+                <Link to="/" className="menumenu">Home</Link>
+                <Link to="/about" className="menumenu">About Us</Link>
+                <Link to="/listingFull" className="menumenu">Cafes</Link>
+                <Link to="/menu" className="menumenu">Menu</Link>
+                <Link to="/contact" className="menumenu">Contact Us</Link>
+            </span>
+            ) : null}
+
+
             {conditionalLD()}
             <div id="social">
                 {conditionalHeader()}
