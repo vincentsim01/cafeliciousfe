@@ -77,7 +77,7 @@ const QuickDisplay = (props) => {
             <div id="tileBox">
                 {listMeal(props)}
              </div>
-             <br></br><br></br>
+             <br></br><br></br><br></br>
 
              {justList(props)}
         </div>
