@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './contact.css';
 
-const baseUrl="http://localhost:5007/api/auth";
+const baseUrl="https://zomato-big-assignment-2-production.up.railway.app";
 
 
     const ContactForm = () => {
@@ -12,7 +12,7 @@ const baseUrl="http://localhost:5007/api/auth";
       let navigate = useNavigate();
 
       const initialValues = {
-        name:'Ronnie',
+        name:'Ronnies',
         email:'ronnie@gmail.com',
         phone:"333222",
         message:"Hi I have an inquiry"
@@ -28,11 +28,11 @@ const baseUrl="http://localhost:5007/api/auth";
       }
 
 
-      console.log("these are the values"+values);
+      console.log("these are the values"+Object.values(values));
 
       const checkout = () => {
 
-        fetch(`${baseUrl}/Contactform`,{
+        fetch(`${baseUrl}/contactus`,{
             method: 'POST',
             headers:{
                 'accept':'application/json',
@@ -52,7 +52,7 @@ const baseUrl="http://localhost:5007/api/auth";
     return(
         <>
                     <Header2/>
-        <div className="container-fluid">
+        <div className="container-fluid p-5">
             <br></br>
 
             <span className="ContactHeader">Contact Cafelicious</span><br></br>
@@ -82,7 +82,7 @@ const baseUrl="http://localhost:5007/api/auth";
                             </div>
                             
                         </div>
-                        <button className='btn btn-success' onClick={checkout}>
+                        <button className='bg-yellow-200 text-black hover:bg-black hover:text-yellow-200 p-2 rounded-md border transition duration-300' onClick={checkout}>
                                 Send
                         </button>
                     </div>

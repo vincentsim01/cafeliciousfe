@@ -106,7 +106,6 @@ const UserModify = () => {
             }
             return (
                 <div>
-
                     <div key={user._id} className='m-5 p-5 bg-yellow-200 rounded-md hover:shadow-md text-center'>
                         <h2 className='text-2xl font-bold'>{user.name}</h2>
                         <p>Email: {user.email}</p>
@@ -125,30 +124,6 @@ const UserModify = () => {
                         <button className='border rounded-md bg-white p-3 m-3 hover:shadow-md ' onClick={() => deleteuser(user._id)}>Delete</button>
                     </div>
                     <div >
-                        {/* {showForm && (
-                        <form id='formupdateuser'>
-                            <label for='name'>
-                                Name
-                            </label>
-                            <input type='text' id='name' name='name' value={values.name} onChange={handleInputChange}>
-                            
-                            </input>
-                            <label for='email'>
-                                Email
-                            </label>
-                            <input type='email' id='email' name='email' value={valueemail} onChange={handleInputChange}>
-                            
-                            </input>
-                            <label for='phone'>
-                                Phone
-                            </label>
-                            <input type='tel' id='phone' name='phone' value={values.phone} onChange={handleInputChange}>
-                            
-                            </input>
-                            <button type='submit' onClick={checkout}>Submit</button>
-
-                        </form>
-                         )} */}
 
                 {editingUser && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
