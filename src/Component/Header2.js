@@ -149,13 +149,14 @@ const Header2 = () => {
             </span>
 
             {burger ? (
-            <span>
-                <Link to="/" className="menumenu">Home</Link>
-                <Link to="/about" className="menumenu">About Us</Link>
-                <Link to="/listingFull" className="menumenu">Cafes</Link>
-                <Link to="/menu" className="menumenu">Menu</Link>
+            <div className='absolute top-15 left-0 w-[50%] border'  style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}>
+                <button onClick={burgertoggle} className='rounded-full hover:shadow-md right-0 top-0'>X</button>
+                <Link to="/" className="menumenu">Home</Link><br></br>
+                <Link to="/about" className="menumenu">About Us</Link><br></br>
+                <Link to="/listingFull" className="menumenu">Cafes</Link><br></br>
+                <Link to="/menu" className="menumenu">Menu</Link><br></br>
                 <Link to="/contact" className="menumenu">Contact Us</Link>
-            </span>
+            </div>
             ) : null}
 
 
