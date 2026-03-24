@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import {useParams,useSearchParams,useNavigate,Link, Navigate} from 'react-router-dom';
 import axios from 'axios';
 import './details.css'
+import StarRating from '../StarRating/StarRating';
 import Header2 from '../Header2';
 
 
@@ -51,11 +52,19 @@ const Details = () => {
                     <div className='tileContent'>
                         <div className='content'>
                             <h1 id='restaurantname'>{restDetails.restaurant_name}</h1>
+                            <div id='locationcontainer'>
+                                <img src='./location.png' id='locationicon'></img>{restDetails.address}
+                            </div>
+                     
+                            <br></br>
+                            <StarRating rating={restDetails.average_rating}></StarRating>
+                            {/* {StarRating(restDetails.average_rating)} */}
+                            {/* <span>{restDetails.average_rating}</span> */}
                             <br></br>
                             <span id="cfeedback">231 Customers Rating Average</span>
                             <br></br><br></br>
                             <span id='pricecontainer'>
-                                <del>${restDetails.cost*1.5}</del> ${restDetails.cost}
+                                <del>${Math.floor(restDetails.cost*1.5)}</del> ${restDetails.cost}
                             </span>
                             <br></br><br></br>
                  
@@ -88,6 +97,7 @@ const Details = () => {
                             </button>
                         </div>
                     </div> 
+                    <img src='./border bottom.png'></img>
                 </>
             )
         }

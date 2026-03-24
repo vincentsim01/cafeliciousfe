@@ -18,16 +18,29 @@
     margin-left: 2%;
     margin-top:2%;
     float: left;
-    padding:30px;
+    padding:20px;
     background-color: yellow;
     border-radius: 20px;
     border:solid 1px black;
+}
+
+.content{
+    border:solid black 1px;
 }
 
 #restaurantname{
     font-size: 40px;
     text-shadow: black;
     font-weight: 800;
+}
+
+#locationcontainer{
+    display:flex;
+    justify-content: left;
+}
+
+#locationicon{
+    width:20px;
 }
 
 .imageClass > img{
@@ -42,7 +55,8 @@
 
 #cfeedback{
     margin-left:3%;
-    color:green
+    color:green;
+    font-size: x-small;
 }
 
 .icons{
