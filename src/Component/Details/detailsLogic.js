@@ -53,7 +53,7 @@ const Details = () => {
                         <div className='content'>
                             <h1 id='restaurantname'>{restDetails.restaurant_name}</h1>
                             <div id='locationcontainer'>
-                                <img src='./location.png' id='locationicon'></img>{restDetails.address}
+                                <a href='https://maps.app.goo.gl/6pbnvu31Dr9XcvvLA'><img src='./location.png' id='locationicon'></img>{restDetails.address}</a>
                             </div>
                      
                             <br></br>
@@ -61,7 +61,7 @@ const Details = () => {
                             {/* {StarRating(restDetails.average_rating)} */}
                             {/* <span>{restDetails.average_rating}</span> */}
                             <br></br>
-                            <span id="cfeedback">231 Customers Rating Average</span>
+                            <span id="cfeedback">{restDetails.rating_text}</span>
                             <br></br><br></br>
                             <span id='pricecontainer'>
                                 <del>${Math.floor(restDetails.cost*1.5)}</del> ${restDetails.cost}
@@ -91,9 +91,10 @@ const Details = () => {
                             <Link to={`/menu/${restId}`} className="btn btn-info">
                             See Menu
                             </Link>&nbsp;&nbsp;
+                            <a href={`tel:${restDetails.phone}`}><button className='btn btn-danger'><i class="fa-solid fa-phone"></i>Call</button></a>
                             <button className="btn btn-success"
                             onClick={proceed}>
-                                Proceed
+                                Proceed To Order
                             </button>
                         </div>
                     </div> 
