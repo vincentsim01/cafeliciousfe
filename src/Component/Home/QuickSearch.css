@@ -6,7 +6,7 @@
     justify-content: center;    
     align-items: center; */
     display:inline-block;
-    width:90%;
+    width:95%;
     margin-left:3%;
     margin-top:2%;
     margin-bottom:12%;
@@ -53,7 +53,7 @@
   
   .tileContainer{
       height:20%;
-      width:90%;
+      width:100%;
       margin-left:1%;
       margin-top:3%;
       box-shadow:10px 20px 10px gray;
@@ -228,8 +228,17 @@
       body{
           background-color:rgb(255, 255, 255)
       }
+
+      #quickSearch{
+        width:100%;
+        /* padding:1px; */
+        margin:1px;
+      }
+
       .tileContainer{
-          width:110%;
+          width:100%;
+        margin-left:5%;
+        margin-top:3%;
       }
       .logo {
           margin-left: 30%;
@@ -253,11 +262,12 @@
       }
 
       #allfoodlist{
-        font-size: 8px;
+        font-size: 6px;
       }
 
       #allfoodlistcontainer{
         /* font-size:6px; */
         margin-left:5px;
+        margin-bottom:7%;
       }
   }
