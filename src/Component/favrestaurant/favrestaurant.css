@@ -94,3 +94,13 @@
     font-family: 'Comfortaa', sans-serif;  
     margin-top: 10px;
 }
+
+
+@media(max-width:700px){
+    #favrestaurantcontainer{
+        height:200%;
+        /* background-color: yellow; */
+        text-align:center;
+    }
+
+}
