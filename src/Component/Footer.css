@@ -2,14 +2,16 @@
 footer{
     /* height: 80px; */
     /* border:10px double orange */
-    background-color: #3b2632;
+    background-color: black;
     text-align: center;
-    color: white;
+    color: yellow;
     font-family: 'Comfortaa', sans-serif;
 }
 
 .footText{
     font-size: 20px;
+    margin-top:2%;
+    margin-bottom:2%;
 }
 
 .footDiv{

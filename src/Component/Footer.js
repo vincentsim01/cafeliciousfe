@@ -3,10 +3,11 @@ import './Footer.css';
 import {Link} from 'react-router-dom';
 
 const Footer = () => {
+    const thisyear = new Date().getFullYear();
     return(
         <footer>
             <hr/>
-            <p className="footText">&copy; Cafelicious 2025</p>
+            <p className="footText">&copy; Cafelicious {thisyear}</p> 
             <hr/>
             <div className="footDiv">
                 <ul>
@@ -16,13 +17,14 @@ const Footer = () => {
             </div>
             <div className="footDiv">
                 <ul>
-                <Link to={`/FAQ`}><li>FAQ</li></Link>
-                    <li>Rate Us</li>
+                <Link to={`/FAQ`}>
+                    <li>FAQ</li></Link>
+                    {/* <li>Rate Us</li> */}
                 </ul>
             </div>
             <div className="footDiv noborder">
                 <ul>
-                    <li>Subscribe</li>
+                    {/* <li>Subscribe</li> */}
                     <Link to={`/promotion`}><li>Promotion</li></Link>
                 </ul>
             </div>
