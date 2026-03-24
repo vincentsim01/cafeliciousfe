@@ -17,29 +17,6 @@ const Details = () => {
     // let [restId] = useState(sessionStorage.getItem('restId'));
     let restId2 = useState(sessionStorage.getItem('restId2'));
 
-    // console.log("this is restId2"+restId2);
-
-    // if(restId==""){
-    //     restId=restId2;
-    // }
-
-
-
-
-    // const restDetail2 = async() => {
-    //     const rdata2 = await axios.get(`${baseUrl}/details?restId=${restId2}`);
-    //     setrestDetails(rdata2.data[0])
-    // }
-
-    // useEffect(() => {
-    //     restDetail2()  
-    // },[]);
-
-
-
-
-
-
 
     let restId = searchParams.getAll('restId');
 
@@ -64,6 +41,7 @@ const Details = () => {
             return(
                 <>
                 <Header2/>
+                <img src='./bordertop.png'></img>
                    <div className='tileImage'>
                     <div className='imageClass'>
                         <img src={restDetails.restaurant_thumb}
@@ -72,10 +50,15 @@ const Details = () => {
                     </div>
                     <div className='tileContent'>
                         <div className='content'>
-                            <h1>{restDetails.restaurant_name}</h1>
+                            <h1 id='restaurantname'>{restDetails.restaurant_name}</h1>
+                            <br></br>
                             <span id="cfeedback">231 Customers Rating Average</span>
-                            <h5>Old Price <del>$15</del></h5>
-                            <h4>Offer Price ${restDetails.cost}</h4>
+                            <br></br><br></br>
+                            <span id='pricecontainer'>
+                                <del>${restDetails.cost*1.5}</del> ${restDetails.cost}
+                            </span>
+                            <br></br><br></br>
+                 
                             <h3>Best cafe for you and only for you</h3>
                                 <div>
                                     <div className="icons">

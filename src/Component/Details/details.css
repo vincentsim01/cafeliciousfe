@@ -2,17 +2,32 @@
     display: inline-block;
     margin-left:5%;
     font-family: 'Comfortaa', sans-serif;
+    padding:10px;
+    margin:10px;
 }
 
 .tileImage{
     width:48%;
     float: left;
+    padding:1px;
+    /* margin:1px; */
 }
 
 .tileContent{
     width:50%;
     margin-left: 2%;
+    margin-top:2%;
     float: left;
+    padding:30px;
+    background-color: yellow;
+    border-radius: 20px;
+    border:solid 1px black;
+}
+
+#restaurantname{
+    font-size: 40px;
+    text-shadow: black;
+    font-weight: 800;
 }
 
 .imageClass > img{
@@ -42,6 +57,13 @@
 #stock{
     font-size: 30px;
     color:green
+}
+
+#pricecontainer{
+    padding:10px;
+    background-color: red;
+    color:white;
+    border-radius: 30px;
 }
 
 .button{
