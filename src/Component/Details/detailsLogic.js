@@ -53,7 +53,7 @@ const Details = () => {
                         <div className='content'>
                             <h1 id='restaurantname'>{restDetails.restaurant_name}</h1>
                             <div id='locationcontainer'>
-                                <a href='https://maps.app.goo.gl/6pbnvu31Dr9XcvvLA'><img src='./location.png' id='locationicon'></img>{restDetails.address}</a>
+                                <a href='https://maps.app.goo.gl/6pbnvu31Dr9XcvvLA'>{restDetails.address}<img src='./location.png' id='locationicon'></img></a>
                             </div>
                      
                             <br></br>
@@ -64,23 +64,45 @@ const Details = () => {
                             <span id="cfeedback">{restDetails.rating_text}</span>
                             <br></br><br></br>
                             <span id='pricecontainer'>
-                                <del>${Math.floor(restDetails.cost*1.5)}</del> ${restDetails.cost}
+                                From: ${restDetails.cost}
                             </span>
                             <br></br><br></br>
                  
-                            <h3>Best cafe for you and only for you</h3>
-                                <div>
+  
+                                <div id='iconcontainer'>
                                     <div className="icons">
                                         <img src="https://i.ibb.co/wJvrhYg/veg.png" alt=""/>
                                     </div>
                                     <div className="icons">
                                         <img src="https://i.ibb.co/mD3jpgc/sentizied.png" alt=""/>
                                     </div>
+                                </div>
+                                <br></br><br></br>
+                                <div id='mealTypeContainer'>
+                                    {restDetails.mealTypes.map((item) => {
+                                        return(
+                                            <span className='mealtypeicon'>
+                                                {item.mealtype_name}
+                                            </span>
+                                        )
+                                    })}
+
+                                </div>
+                                <br></br><br></br>
+                                <div id='foodTypeContainer'>
+                                    {restDetails.foodType.map((item) => {
+                                        return(
+                                            <span className='foodtypeicon'>
+                                                {item.foodtype_name}
+                                            </span>
+                                        )
+                                    })}
 
                                 </div>
 
     
                         </div>
+                        <br></br>
                         
                         <hr/>
                         <div className="col-md-12">
