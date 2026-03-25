@@ -36,17 +36,12 @@ const Details = () => {
         navigate(`/placeOrder/${restDetails.restaurant_name}`)
     }
 
-
-
-
-
     const renderDetails = () => {
         if(restDetails){
             return(
                 <>
                 <Header2/>
-       
-                <img src='./bordertop.png'></img>
+                <img src='./bordertop.png' className='w-[80%]'></img>
                 <div id='topcontainer' className='block'>
                    <div className='tileImage'>
                         <div className='imageClass'>
@@ -81,7 +76,7 @@ const Details = () => {
                             <span id="cfeedback">{restDetails.rating_text}</span>
                             <br></br><br></br>
                             <span id='pricecontainer'>
-                                From: ${restDetails.cost}
+                                <span id='pricecontainertext'>From: ${restDetails.cost}</span>
                             </span>
                             <br></br><br></br>
                  
@@ -100,6 +95,15 @@ const Details = () => {
                                         return(
                                             <span className='mealtypeicon'>
                                                 {item.mealtype_name}
+                                                {item.mealtype_name === "Dessert" ? (
+                                                    <i className="fa-solid fa-ice-cream"></i>
+                                                ) : null}
+                                                {item.mealtype_name === "Lunch" ? (
+                                                    <i class="fa-solid fa-sun"></i>
+                                                ) : null}
+                                                {item.mealtype_name === "Dinner" ? (
+                                                    <i class="fa-solid fa-cloud-moon"></i>
+                                                ) : null}
                                             </span>
                                         )
                                     })}
@@ -147,7 +151,7 @@ const Details = () => {
 
                     {/* </div> */}
                     <br></br>
-                    <img src='./border bottom.png'></img>
+                    <img src='./border bottom.png' className='w-[80%]'></img>
                 </>
             )
         }
