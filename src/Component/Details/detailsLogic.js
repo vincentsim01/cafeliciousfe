@@ -70,7 +70,7 @@ const Details = () => {
                         <div className='content'>
                             <h1 id='restaurantname'>{restDetails.restaurant_name}</h1>
                             <div id='locationcontainer'>
-                                <a href='https://maps.app.goo.gl/6pbnvu31Dr9XcvvLA'>{restDetails.address}<img src='./location.png' id='locationicon'></img></a>
+                                <a href='https://maps.app.goo.gl/6pbnvu31Dr9XcvvLA'><span>{restDetails.address}</span><span><img src='./location.png' id='locationicon'></img></span></a>
                             </div>
                      
                             <br></br>

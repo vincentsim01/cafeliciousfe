@@ -35,8 +35,14 @@
 }
 
 #locationcontainer{
-    display:flex;
-    justify-content: left;
+    display:block;
+    /* justify-content: center; */
+}
+
+#locationcontainer a {
+  display: flex;
+  align-items: center; /* vertically center */
+  gap: 5px; /* spacing between text and icon */
 }
 
 #locationicon{
