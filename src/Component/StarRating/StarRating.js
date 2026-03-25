@@ -7,13 +7,13 @@ function StarRating({ rating }) {
   return (
     <span className="text-6xl text-yellow-500">
       {[...Array(fullStars)].map((_, i) => (
-        <span key={"full"+i}>★</span>
+        <span key={"full"+i}><i class="fa-solid fa-star"></i></span>
       ))}
 
-      {hasHalf && <span>⯨</span>}
+      {hasHalf && <span><i class="fa-solid fa-star-half"></i></span>}
 
       {[...Array(emptyStars)].map((_, i) => (
-        <span key={"empty"+i}>☆</span>
+        <span key={"empty"+i}><i class="fa-regular fa-star"></i></span>
       ))}
     </span>
   );

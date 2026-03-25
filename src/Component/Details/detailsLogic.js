@@ -76,19 +76,19 @@ const Details = () => {
                             <span id="cfeedback">{restDetails.rating_text}</span>
                             <br></br><br></br>
                             <span id='pricecontainer'>
-                                <span id='pricecontainertext'>From: ${restDetails.cost}</span>
+                                <span id='pricecontainertext'>Average Price: ${restDetails.cost}</span>
                             </span>
                             <br></br><br></br>
                  
   
-                                <div id='iconcontainer'>
+                                {/* <div id='iconcontainer'>
                                     <div className="icons">
                                         <img src="https://i.ibb.co/wJvrhYg/veg.png" alt=""/>
                                     </div>
                                     <div className="icons">
                                         <img src="https://i.ibb.co/mD3jpgc/sentizied.png" alt=""/>
                                     </div>
-                                </div>
+                                </div> */}
                                 <br></br><br></br>
                                 <div id='mealTypeContainer'>
                                     {restDetails.mealTypes.map((item) => {
@@ -125,17 +125,17 @@ const Details = () => {
                         </div>
                         <br></br>
                         
-                        <hr/>
+                        <br></br><br></br>
                         <div className="col-md-12">
-                            <Link className='btn btn-danger'
+                            <Link className='buttonnav'
                             to={`/listing/${foodTypeId}`}>
                                 Back
                             </Link> &nbsp;&nbsp;
-                            <Link to={`/menu/${restId}`} className="btn btn-info">
+                            <Link to={`/menu/${restId}`} className="buttonnav">
                             See Menu
                             </Link>&nbsp;&nbsp;
-                            <a href={`tel:${restDetails.phone}`}><button className='btn btn-danger'><i class="fa-solid fa-phone"></i>Call</button></a>
-                            <button className="btn btn-success"
+                            <a href={`tel:${restDetails.phone}`}><button className='buttonnav'><i class="fa-solid fa-phone"></i>Call</button></a>
+                            <button className="buttonnavpay"
                             onClick={proceed}>
                                 Proceed To Order
                             </button>
