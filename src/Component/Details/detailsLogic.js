@@ -3,6 +3,7 @@ import {useParams,useSearchParams,useNavigate,Link, Navigate} from 'react-router
 import axios from 'axios';
 import './details.css'
 import StarRating from '../StarRating/StarRating';
+import Carouselimage from '../Carouselimage/Carouselimage';
 import Header2 from '../Header2';
 
 
@@ -21,6 +22,7 @@ const Details = () => {
 
     let restId = searchParams.getAll('restId');
 
+
     const restDetail = async() => {
         const rdata = await axios.get(`${baseUrl}/details?restId=${restId}`);
         setrestDetails(rdata.data[0])
@@ -33,6 +35,7 @@ const Details = () => {
     const proceed = () => {
         navigate(`/placeOrder/${restDetails.restaurant_name}`)
     }
+
 
 
 
@@ -120,6 +123,10 @@ const Details = () => {
                             </button>
                         </div>
                     </div> 
+                    <div id='imagecontainer'>
+                        
+                        <Carouselimage images={restDetails.image_gallery}></Carouselimage>
+                    </div>
                     <img src='./border bottom.png'></img>
                 </>
             )
