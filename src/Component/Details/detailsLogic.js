@@ -45,12 +45,26 @@ const Details = () => {
             return(
                 <>
                 <Header2/>
+       
                 <img src='./bordertop.png'></img>
+                <div id='topcontainer' className='block'>
                    <div className='tileImage'>
-                    <div className='imageClass'>
-                        <img src={restDetails.restaurant_thumb}
-                        alt={restDetails.restaurant_name}/>
-                    </div>
+                        <div className='imageClass'>
+                            <img src={restDetails.restaurant_thumb}
+                            alt={restDetails.restaurant_name}/>
+                        </div>
+                            {restDetails.image_gallery.map((item)=>{
+                            return(
+                                <div className='inline h-[20vh]'>
+                                    <div className='inline-block w-[25%]'>
+                                           <img src={item} className=''></img>
+                                    </div>
+                                </div>
+
+                         
+                            )
+                        })}
+                        {/* <Carouselimage images={restDetails.image_gallery}></Carouselimage> */}
                     </div>
                     <div className='tileContent'>
                         <div className='content'>
@@ -122,11 +136,17 @@ const Details = () => {
                                 Proceed To Order
                             </button>
                         </div>
-                    </div> 
-                    <div id='imagecontainer'>
-                        
-                        <Carouselimage images={restDetails.image_gallery}></Carouselimage>
                     </div>
+                        <br></br> <br></br><br></br>
+                        {/* <div id='imagecontainer'>
+                            <Carouselimage images={restDetails.image_gallery}></Carouselimage>
+                        </div> */}
+                    </div>
+
+                    {/* <div id='imagecontainer'> */}
+
+                    {/* </div> */}
+                    <br></br>
                     <img src='./border bottom.png'></img>
                 </>
             )

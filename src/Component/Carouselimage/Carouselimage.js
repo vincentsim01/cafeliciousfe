@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import './Carouselimage.css'
 
 const Carouselimage = ({images}) => {
     let [carouselindex, setcarouselindex]=useState(0);
@@ -18,12 +19,16 @@ const Carouselimage = ({images}) => {
     }
 
     return(
-        <>
+        <div id='carouselcontainer'>
+            <h1 className='text-4xl'>GALLERY</h1>
             {images?.length > 0 && (
-                <img src={images[carouselindex]} alt="carousel" />
+                <img className='theimage' src={images[carouselindex]} alt="carousel" />
             )}
-            <button onClick={prevcarouselindex}>Previous</button><button className='ml-3' onClick={nextcarouselindex}>Next</button>
-        </>
+            <div id='buttoncontainer'>
+                  <button onClick={prevcarouselindex} id='prevbutton'>Previous</button><button className='ml-3' onClick={nextcarouselindex} id='nextbutton'>Next</button>
+            </div>
+          
+        </div>
     )
 }
 

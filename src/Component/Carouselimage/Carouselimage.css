@@ -1,0 +1,51 @@
+#carouselcontainer{
+    margin-top:5%;
+    padding:5%;
+    /* border:solid black 1px; */
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+
+
+
+}
+
+#buttoncontainer{
+    display:flex;
+    justify-content:center;
+}
+
+#prevbutton{
+    margin-top:10px;
+    padding:5px;
+    background-color: yellow;
+    color:black;
+    border-radius:10px;
+    transition:all 0.3s ease;
+}
+
+#prevbutton:hover{
+    background-color:black;
+    color:white;
+}
+
+#nextbutton{
+    margin-top:10px;
+    padding:5px;
+    background-color: yellow;
+    color:black;
+    border-radius:10px;
+    transition:all 0.3s ease;
+    margin-left:5px;
+
+}
+
+#nextbutton:hover{
+    background-color:black;
+    color:white;
+}
+
+.theimage{
+    width:60%;
+    border-radius:10px;
+}
