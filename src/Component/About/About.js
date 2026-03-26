@@ -32,15 +32,15 @@ const QuickAbout = () => {
             <div class='flex justify-center'>
                 <img src='./bordertop.png' class='w-[50%]'></img>
             </div>
-            <div id='aboutceo' class='flex justify-center items-center'>
+            <div id='aboutceo' class='flex flex-col justify-center md:flex md:justify-center md:items-center'>
 
-                <div id='aboutceoleft' class='inline-block md:w-[55%] m-3 p-2 font-comfortaa'>
+                <div id='aboutceoleft' class='md:inline-block md:w-[55%] m-3 p-2 font-comfortaa'>
                     <span class='text-3xl font-bold underline font-comfortaa'>Message from our CEO</span>
                     <br></br><br></br>
                     Hi Welcome to cafelicious, as the CEO of cafelicious we thank you for your trust in our platform and to help us getting more cafes getting the recognition they deserve.
                     We believe everyone deserves a good cafe experience wherever and whenever they are and cafelicious is here to connect you to your desired cafe.
                 </div>
-                <div id='aboutceoright' class='inline-block md:w-[20%] m-3 p-2'>
+                <div id='aboutceoright' class='md:inline-block md:w-[20%] m-3 p-2'>
                     <img src='./ceophoto.png' class='rounded-md'></img>
                 </div>
             </div>
@@ -54,7 +54,7 @@ const QuickAbout = () => {
                 <span class='text-3xl font-bold underline font-comfortaa'>Gallery</span>
             </div>
 
-            <div class='grid grid-cols-5 grid-rows-3  p-5 gap-3'>
+            <div class='grid grid-cols-5 grid-rows-3 p-1 gap-1 md:p-5 md:gap-3'>
                 <div class='col-start-1 col-end-2  flex justify-center'>
                     <img src='./cafe1.jpg' class='rounded-md'></img>
                 </div>

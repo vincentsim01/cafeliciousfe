@@ -15,3 +15,18 @@
 #AboutHeader{
     font-size: large;
 }
+
+
+@media (max-width: 767px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+/* ✅ Desktop */
+/* 1024px and above */
+@media (min-width: 1024px) {
+
+}
