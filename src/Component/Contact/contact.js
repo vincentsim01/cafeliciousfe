@@ -54,9 +54,11 @@ const baseUrl="https://zomato-big-assignment-2-production.up.railway.app";
 
     return(
         <>
-                    <Header2/>
+            <Header2/>
+                <div className='w-full'><img src='./contact.png' id='contactbanner' className='w-full'/></div>
         <div className={`container-fluid p-5 ${loading ? "opacity-20 scale-95" : "opacity-100"}`}>
             <br></br>
+   
 
             <span className="ContactHeader">Contact Cafelicious</span><br></br>
             {/* <span className="ContactSubHeader">Contact Cafelicious Here</span> */}
