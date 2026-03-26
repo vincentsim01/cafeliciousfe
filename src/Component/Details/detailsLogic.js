@@ -39,25 +39,25 @@ const Details = () => {
     const getFoodIcon = (type) => {
         switch (type) {
             case "Italian":
-            return <img src="/italy.png" alt="Italian" className='w-[10px]' />;
+            return <img src="/italy.png" alt="Italian" className='w-[20px] ml-2 rounded-sm ' />;
             case "Japanese":
-            return <img src="/japan.png" alt="Japanese" className='w-[30px] h-[30px] z-10'/>;
+            return <img src="/japan.png" alt="Japanese" className='w-[30px] ml-2 rounded-sm'/>;
             case "French":
-            return <img src="/france.png" alt="French" />;
+            return <img src="/france.png" alt="French" className='w-[20px] ml-2 rounded-sm'/>;
             case "Indonesian":
-            return <img src="/indonesia.png" alt="Indonesian" />;
+            return <img src="/indonesia.png" alt="Indonesian" className='w-[20px] ml-2 rounded-sm'/>;
             case "Chinese":
-            return <img src="/china.png" alt="Chinese" />;
+            return <img src="/china.png" alt="Chinese" className='w-[20px] ml-2 rounded-sm'/>;
             case "Indian":
-            return <img src="/india.png" alt="Indian" />;
+            return <img src="/india.png" alt="Indian" className='w-[20px] ml-2 rounded-sm'/>;
             case "Malaysian":
-            return <img src="/malaysia.png" alt="Malaysian" />;
+            return <img src="/malaysia.png" alt="Malaysian" className='w-[20px] ml-2 rounded-sm'/>;
             case "German":
-            return <img src="/germany.png" alt="German"  />;
+            return <img src="/germany.png" alt="German"  className='w-[20px] ml-2 rounded-sm'/>;
             case "American":
-            return <img src="/america.png" alt="American" />;
+            return <img src="/america.png" alt="American"className='w-[20px] ml-2 rounded-sm' />;
             case "Korean":
-            return <img src="/korea.png" alt="Korean" />;
+            return <img src="/korea.png" alt="Korean" className='w-[20px] ml-2 rounded-sm'/>;
             default:
             return null;
         }
@@ -152,14 +152,14 @@ const Details = () => {
                                 <div id='foodTypeContainer'>
                                     {restDetails.foodType.map((item) => {
                                         return(
-                                            <span className="foodtypeicon inline-flex w-[30%]" key={item.foodtype_name}>
+                                            <span className="foodtypeicon inline-flex w-[20%] items-center" key={item.foodtype_name}>
                                             {item.foodtype_name}
-                                            {/* <div className='z-5'>{getFoodIcon(item.foodtype_name)}</div> */}
-                                            {item.foodtype_name === "Japanese" ? (
+                                            <div className='z-5'>{getFoodIcon(item.foodtype_name)}</div>
+                                            {/* {item.foodtype_name === "Japanese" ? (
                                                     <span>
                                                         <img src='./japan.png' className='w-[30px]'></img>
                                                     </span>
-                                            ) : null}
+                                            ) : null} */}
                                             </span>
                                         )
                                     })}

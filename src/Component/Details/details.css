@@ -87,12 +87,20 @@
     border-radius: 30px;
 }
 
+.buttonnav:hover{
+    transform:scale(1.05);
+}
+
 .buttonnavpay{
     padding:25px;
     background-color: green;
     color:white;
     border-radius: 30px;
     margin-left:5px;
+}
+
+.buttonnavpay:hover{
+    transform:scale(1.05);
 }
 
 #imagecontainer{
