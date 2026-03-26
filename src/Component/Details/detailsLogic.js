@@ -36,6 +36,33 @@ const Details = () => {
         navigate(`/placeOrder/${restDetails.restaurant_name}`)
     }
 
+    const getFoodIcon = (type) => {
+        switch (type) {
+            case "Italian":
+            return <img src="/italy.png" alt="Italian" className='w-[10px]' />;
+            case "Japanese":
+            return <img src="/japan.png" alt="Japanese" className='w-[30px] h-[30px] z-10'/>;
+            case "French":
+            return <img src="/france.png" alt="French" />;
+            case "Indonesian":
+            return <img src="/indonesia.png" alt="Indonesian" />;
+            case "Chinese":
+            return <img src="/china.png" alt="Chinese" />;
+            case "Indian":
+            return <img src="/india.png" alt="Indian" />;
+            case "Malaysian":
+            return <img src="/malaysia.png" alt="Malaysian" />;
+            case "German":
+            return <img src="/germany.png" alt="German"  />;
+            case "American":
+            return <img src="/america.png" alt="American" />;
+            case "Korean":
+            return <img src="/korea.png" alt="Korean" />;
+            default:
+            return null;
+        }
+    };
+
     const renderDetails = () => {
         if(restDetails){
             return(
@@ -104,6 +131,18 @@ const Details = () => {
                                                 {item.mealtype_name === "Dinner" ? (
                                                     <i class="fa-solid fa-cloud-moon"></i>
                                                 ) : null}
+                                                {item.mealtype_name === "Drink" ? (
+                                                    <i class="fa-solid fa-beer-mug-empty"></i>
+                                                ) : null}
+                                                {item.mealtype_name === "Nightlife" ? (
+                                                    <i class="fa-solid fa-champagne-glasses"></i>
+                                                ) : null}
+                                                {item.mealtype_name === "Snack" ? (
+                                                    <i class="fa-solid fa-cheese"></i>
+                                                ) : null}
+                                                {item.mealtype_name === "Breakfast" ? (
+                                                    <i class="fa-solid fa-mug-saucer"></i>
+                                                ) : null}
                                             </span>
                                         )
                                     })}
@@ -113,8 +152,14 @@ const Details = () => {
                                 <div id='foodTypeContainer'>
                                     {restDetails.foodType.map((item) => {
                                         return(
-                                            <span className='foodtypeicon'>
-                                                {item.foodtype_name}
+                                            <span className="foodtypeicon inline-flex w-[30%]" key={item.foodtype_name}>
+                                            {item.foodtype_name}
+                                            {/* <div className='z-5'>{getFoodIcon(item.foodtype_name)}</div> */}
+                                            {item.foodtype_name === "Japanese" ? (
+                                                    <span>
+                                                        <img src='./japan.png' className='w-[30px]'></img>
+                                                    </span>
+                                            ) : null}
                                             </span>
                                         )
                                     })}
