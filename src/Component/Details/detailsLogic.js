@@ -18,9 +18,38 @@ const Details = () => {
     let [foodTypeId] = useState(sessionStorage.getItem('foodTypeId'));
     // let [restId] = useState(sessionStorage.getItem('restId'));
     let restId2 = useState(sessionStorage.getItem('restId2'));
+    // const [restId, setRestId] = useState(parseInt(searchParams.getAll('restId')[0]));
 
+    // console.log("restId from search params: ", restId, "type of restId: ", typeof restId);
+    // let restId = searchParams.getAll('restId');
+    const restId = parseInt(searchParams.get('restId'));
 
-    let restId = searchParams.getAll('restId');
+    function nextrestId() {
+        let newId = restId < 100 ? restId + 1 : 100;
+        navigate(`?restId=${newId}`);
+    }
+
+    function previousrestId() {
+        let newId = restId > 0 ? restId - 1 : 0;
+        navigate(`?restId=${newId}`);
+    }
+
+    // function previousrestId(){
+    //     if(restId > 0){
+    //         setRestId(restId-1);
+    //     }else if(restId <= 0){
+    //         setRestId(0);
+    //     }
+
+    // }
+
+    // function nextrestId(){
+    //     if(restId < 100){
+    //         setRestId(restId+1);
+    //     }else if(restId >= 100){
+    //         setRestId(100);
+    //     }
+    // }
 
 
     const restDetail = async() => {
@@ -30,7 +59,7 @@ const Details = () => {
 
     useEffect(() => {
         restDetail()
-    },[]);
+    },[restId]);
 
     const proceed = () => {
         navigate(`/placeOrder/${restDetails.restaurant_name}`)
@@ -103,7 +132,7 @@ const Details = () => {
                             <span id="cfeedback">{restDetails.rating_text}</span>
                             <br></br><br></br>
                             <span id='pricecontainer'>
-                                <span id='pricecontainertext'>Average Price: ${restDetails.cost}</span>
+                                <span id='pricecontainertext'>Average Price: US${restDetails.cost}</span>
                             </span>
                             <br></br><br></br>
                  
@@ -205,6 +234,15 @@ const Details = () => {
     return(
         <>
             <div className="main">
+                <div>
+                    Navigate to different cafes:
+                    <button className='previousbutton' onClick={previousrestId}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button className='nextbutton' onClick={nextrestId}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
                 {renderDetails()}
             </div>
         </>
