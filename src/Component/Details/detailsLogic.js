@@ -95,9 +95,16 @@ const Details = () => {
     const renderDetails = () => {
         if(restDetails){
             return(
-                <>
-                <Header2/>
+                <div className='p-5'>
+
                 <img src='./bordertop.png' className='w-[80%]'></img>
+                    <br></br><br></br>
+                    <button className='previousbutton h-full bg-yellow-300 absolute left-0 top-[130%] transform -translate-y-1/2' onClick={previousrestId}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button className='nextbutton h-full bg-yellow-300 absolute right-0 top-[130%] transform -translate-y-1/2' onClick={nextrestId}>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 <div id='topcontainer' className='block'>
                    <div className='tileImage'>
                         <div className='imageClass'>
@@ -226,23 +233,26 @@ const Details = () => {
                     {/* </div> */}
                     <br></br>
                     <img src='./border bottom.png' className='w-[80%]'></img>
-                </>
+                </div>
             )
         }
     }
  
     return(
         <>
+            <Header2/>
             <div className="main">
-                <div>
-                    Navigate to different cafes:
-                    <button className='previousbutton' onClick={previousrestId}>
+
+                {/* <div className='relative p-5'>
+                 
+                    <br></br><br></br>
+                    <button className='previousbutton h-full bg-yellow-300 absolute left-0 top-1/2 transform -translate-y-1/2' onClick={previousrestId}>
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <button className='nextbutton' onClick={nextrestId}>
+                    <button className='nextbutton h-full bg-yellow-300 absolute right-0 top-1/2 transform -translate-y-1/2' onClick={nextrestId}>
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
-                </div>
+                </div> */}
                 {renderDetails()}
             </div>
         </>
