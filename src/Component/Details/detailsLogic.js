@@ -112,9 +112,9 @@ const Details = () => {
                         </div>
                             {restDetails.image_gallery.map((item)=>{
                             return(
-                                <div className='inline h-[20vh]'>
+                                <div className='inline h-[30vh] ml-3'>
                                     <div className='inline-block w-[25%]'>
-                                           <img src={item} className='rounded-md md:h-[20vh]'></img>
+                                           <img src={item} className='rounded-md md:h-[20vh] '></img>
                                     </div>
                                 </div>
 
