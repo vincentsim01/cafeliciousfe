@@ -161,3 +161,53 @@
 #Atoc{
     background-color:green
 }
+
+
+@media (max-width: 767px) {
+
+    #pricecontainer{
+        padding:10px;
+        background-color: black;
+        color:white;
+        border-radius: 30px;
+    }
+
+    #pricecontainertext{
+        font-size: 15px;
+    }
+
+    .mealtypeicon{
+        padding:10px;
+        background-color: black;
+        border-radius:10px;
+        color:white;
+        margin-top:2px;
+        transition: transform 0.2s ease;
+        display:block;  
+        text-align: center;
+    }
+
+    .foodtypeicon{
+        padding:15px;
+        background-color: black;
+        border-radius:10px;
+        color:white;
+        margin-left:2px;
+    }
+
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+
+}

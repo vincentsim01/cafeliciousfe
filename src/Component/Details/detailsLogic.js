@@ -98,10 +98,10 @@ const Details = () => {
 
                 <img src='./bordertop.png' className='w-[100%]'></img>
                     <br></br><br></br>
-                    <button className='previousbutton h-full w-[3%] bg-[radial-gradient(circle,_yellow_0%,_transparent_70%)] hover:bg-[radial-gradient(circle,_black_50%,_transparent_70%)] hover:text-white hover:scale-105 hover:shadow-lg absolute left-5 top-[130%] hover:border-1 transform -translate-y-1/2' onClick={previousrestId}>
+                    <button className='previousbutton h-full w-[8%] md:w-[3%] bg-[radial-gradient(circle,_yellow_0%,_transparent_70%)] hover:bg-[radial-gradient(circle,_black_50%,_transparent_70%)] hover:text-white hover:scale-105 hover:shadow-lg absolute left-5 top-[130%] hover:border-1 transform -translate-y-1/2' onClick={previousrestId}>
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <button className='nextbutton h-full w-[3%] bg-[radial-gradient(circle,_yellow_0%,_transparent_70%)] hover:bg-[radial-gradient(circle,_black_50%,_transparent_70%)] hover:text-white hover:scale-105 hover:shadow-lg absolute right-5 top-[130%] hover:border-1 transform -translate-y-1/2' onClick={nextrestId}>
+                    <button className='nextbutton h-full w-[8%] md:w-[3%] bg-[radial-gradient(circle,_yellow_0%,_transparent_70%)] hover:bg-[radial-gradient(circle,_black_50%,_transparent_70%)] hover:text-white hover:scale-105 hover:shadow-lg absolute right-5 top-[130%] hover:border-1 transform -translate-y-1/2' onClick={nextrestId}>
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 <div id='topcontainer' className='block'>
@@ -112,8 +112,8 @@ const Details = () => {
                         </div>
                             {restDetails.image_gallery.map((item)=>{
                             return(
-                                <div className='inline h-[20vh]'>
-                                    <div className='inline-block w-[25%]'>
+                                <div className='block md:inline md:h-[20vh]'>
+                                    <div className='block md:inline-block md:w-[25%]'>
                                            <img src={item} className=''></img>
                                     </div>
                                 </div>
@@ -142,15 +142,6 @@ const Details = () => {
                             </span>
                             <br></br><br></br>
                  
-  
-                                {/* <div id='iconcontainer'>
-                                    <div className="icons">
-                                        <img src="https://i.ibb.co/wJvrhYg/veg.png" alt=""/>
-                                    </div>
-                                    <div className="icons">
-                                        <img src="https://i.ibb.co/mD3jpgc/sentizied.png" alt=""/>
-                                    </div>
-                                </div> */}
                                 <br></br><br></br>
                                 <div id='mealTypeContainer'>
                                     {restDetails.mealTypes.map((item) => {
