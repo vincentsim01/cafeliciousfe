@@ -165,6 +165,38 @@
 
 @media (max-width: 767px) {
 
+    .tileImage{
+        display:block;
+        padding:1px;
+        width:100%;
+        /* margin:1px; */
+    }
+
+    .content{
+        display:block;
+    }
+
+    .imageClass > img{
+        /* width:95%; */
+        margin-left: 3%;
+        margin-top: 3%;
+        border-radius:15px;
+        border:solid 1px turquoise;
+    }
+
+
+    .tileContent{
+        display:block;
+        width:100%;
+        margin-left: 2%;
+        margin-top:2%;
+        padding:20px;
+        background-color: yellow;
+        border-radius: 20px;
+        border:solid 1px black;
+    }
+
+
     #pricecontainer{
         padding:10px;
         background-color: black;
@@ -188,11 +220,29 @@
     }
 
     .foodtypeicon{
-        padding:15px;
+        padding:10px;
         background-color: black;
         border-radius:10px;
         color:white;
-        margin-left:2px;
+        display:block;
+        text-align: center;
+        margin-top:2px;
+    }
+
+    .buttonnav{
+        padding:15px;
+        background-color: black;
+        color:white;
+        border-radius: 30px;
+        font-size: 12px;
+    }
+
+    .buttonnavpay{
+        padding:15px;
+        background-color: green;
+        color:white;
+        border-radius: 30px;
+        font-size: 12px;
     }
 
 

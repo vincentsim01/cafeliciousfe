@@ -104,7 +104,7 @@ const Details = () => {
                     <button className='nextbutton h-full w-[8%] md:w-[3%] bg-[radial-gradient(circle,_yellow_0%,_transparent_70%)] hover:bg-[radial-gradient(circle,_black_50%,_transparent_70%)] hover:text-white hover:scale-105 hover:shadow-lg absolute right-5 top-[130%] hover:border-1 transform -translate-y-1/2' onClick={nextrestId}>
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
-                <div id='topcontainer' className='block'>
+                <div id='topcontainer'>
                    <div className='tileImage'>
                         <div className='imageClass'>
                             <img src={restDetails.restaurant_thumb}
@@ -112,16 +112,16 @@ const Details = () => {
                         </div>
                             {restDetails.image_gallery.map((item)=>{
                             return(
-                                <div className='block md:inline md:h-[20vh]'>
-                                    <div className='block md:inline-block md:w-[25%]'>
-                                           <img src={item} className=''></img>
+                                <div className='inline h-[20vh]'>
+                                    <div className='inline-block w-[25%]'>
+                                           <img src={item} className='rounded-md md:h-[20vh]'></img>
                                     </div>
                                 </div>
 
                          
                             )
                         })}
-                        {/* <Carouselimage images={restDetails.image_gallery}></Carouselimage> */}
+                       
                     </div>
                     <div className='tileContent'>
                         <div className='content'>
@@ -178,7 +178,7 @@ const Details = () => {
                                 <div id='foodTypeContainer'>
                                     {restDetails.foodType.map((item) => {
                                         return(
-                                            <span className="foodtypeicon inline-flex w-[20%] items-center" key={item.foodtype_name}>
+                                            <span className="foodtypeicon md:inline-flex md:w-[20%] flex flex-col items-center justify-content" key={item.foodtype_name}>
                                             {item.foodtype_name}
                                             <div className='z-5'>{getFoodIcon(item.foodtype_name)}</div>
                                             {/* {item.foodtype_name === "Japanese" ? (
@@ -197,7 +197,7 @@ const Details = () => {
                         <br></br>
                         
                         <br></br><br></br>
-                        <div className="col-md-12">
+                        <div className="">
                             <Link className='buttonnav'
                             to={`/listing/${foodTypeId}`}>
                                 Back
