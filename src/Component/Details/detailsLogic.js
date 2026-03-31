@@ -34,30 +34,29 @@ const Details = () => {
         navigate(`?restId=${newId}`);
     }
 
-    // function previousrestId(){
-    //     if(restId > 0){
-    //         setRestId(restId-1);
-    //     }else if(restId <= 0){
-    //         setRestId(0);
-    //     }
-
-    // }
-
-    // function nextrestId(){
-    //     if(restId < 100){
-    //         setRestId(restId+1);
-    //     }else if(restId >= 100){
-    //         setRestId(100);
-    //     }
-    // }
-
 
     const restDetail = async() => {
-        const rdata = await axios.get(`${baseUrl}/details?restId=${restId}`);
-        setrestDetails(rdata.data[0])
+        const rdata = await axios.get(`${baseUrl}/details?restId=${restId}`)
+        if(!rdata){
+            let prevId = restId > 1 ? restId - 1 : 1;
+            navigate(`?restId=${prevId}`);
+            return;
+        }
+        axios.get(`${baseUrl}/details?restId=${restId}`)
+        .then((res) => {
+            setrestDetails(res.data[0])
+        })
+        .catch((err) => {
+            console.log(err);
+            let prevId = restId > 1 ? restId - 1 : 1;
+            navigate(`?restId=${prevId}`);
+        })
+        // setrestDetails(rdata.data[0])
     }
 
     useEffect(() => {
+        console.log("restId in useEffect: ", restId, "type of restId: ", typeof restId);
+        if (!restId) return;
         restDetail()
     },[restId]);
 
@@ -95,14 +94,14 @@ const Details = () => {
     const renderDetails = () => {
         if(restDetails){
             return(
-                <div className='p-5'>
+                <div className='p-15'>
 
-                <img src='./bordertop.png' className='w-[80%]'></img>
+                <img src='./bordertop.png' className='w-[100%]'></img>
                     <br></br><br></br>
-                    <button className='previousbutton h-full bg-yellow-300 absolute left-0 top-[130%] transform -translate-y-1/2' onClick={previousrestId}>
+                    <button className='previousbutton h-full w-[3%] bg-[radial-gradient(circle,_yellow_0%,_transparent_70%)] hover:bg-[radial-gradient(circle,_black_50%,_transparent_70%)] hover:text-white hover:scale-105 hover:shadow-lg absolute left-5 top-[130%] hover:border-1 transform -translate-y-1/2' onClick={previousrestId}>
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <button className='nextbutton h-full bg-yellow-300 absolute right-0 top-[130%] transform -translate-y-1/2' onClick={nextrestId}>
+                    <button className='nextbutton h-full w-[3%] bg-[radial-gradient(circle,_yellow_0%,_transparent_70%)] hover:bg-[radial-gradient(circle,_black_50%,_transparent_70%)] hover:text-white hover:scale-105 hover:shadow-lg absolute right-5 top-[130%] hover:border-1 transform -translate-y-1/2' onClick={nextrestId}>
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 <div id='topcontainer' className='block'>
@@ -232,7 +231,7 @@ const Details = () => {
 
                     {/* </div> */}
                     <br></br>
-                    <img src='./border bottom.png' className='w-[80%]'></img>
+                    <img src='./border bottom.png' className='w-[100%]'></img>
                 </div>
             )
         }
