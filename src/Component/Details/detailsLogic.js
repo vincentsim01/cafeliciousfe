@@ -198,14 +198,16 @@ const Details = () => {
                         
                         <br></br><br></br>
                         <div className="">
-                            <Link className='buttonnav'
+                            <Link
                             to={`/listing/${foodTypeId}`}>
-                                Back
+                                <button className="buttonnav">Back</button>
                             </Link> &nbsp;&nbsp;
-                            <Link to={`/menu/${restId}`} className="buttonnav">
-                            See Menu
+                            <Link to={`/menu/${restId}`}>
+                            <button className="buttonnav">See Menu</button>
                             </Link>&nbsp;&nbsp;
-                            <a href={`tel:${restDetails.phone}`}><button className='buttonnav'><i class="fa-solid fa-phone"></i>Call</button></a>
+                            <Link to={`tel:${restDetails.phone}`}>
+                            <button className="buttonnav"><i class="fa-solid fa-phone"></i>Call</button>
+                            </Link>
                             <button className="buttonnavpay"
                             onClick={proceed}>
                                 Proceed To Order
