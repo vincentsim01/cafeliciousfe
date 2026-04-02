@@ -5,7 +5,7 @@ function StarRating({ rating }) {
   const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
 
   return (
-    <span className="text-xl md:text-6xl text-yellow-500">
+    <span className="text-xl md:text-4xl text-yellow-500">
       {[...Array(fullStars)].map((_, i) => (
         <span key={"full"+i}><i class="fa-solid fa-star"></i></span>
       ))}

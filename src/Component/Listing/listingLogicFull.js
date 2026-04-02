@@ -15,6 +15,7 @@ const baseUrl = "https://zomato-big-assignment-2-production.up.railway.app"
 const ListingFull = () => {
 
     const {theme, toggleTheme} = useContext(ThemeContext);
+    const [loading,setloading] = useState(true);
     let params = useParams();
     const [restList,setRestList] = useState();
 
@@ -27,11 +28,15 @@ const ListingFull = () => {
    
 
     useEffect(() => {
+        setloading(true)
         sessionStorage.setItem('foodTypeId',foodTypeId)
         // fetch(`${baseUrl}/restaurants?foodtypeId=${foodTypeId}`,{method:'GET'})
         axios.get(`${baseUrl}/restaurants`)
         .then((res) => {
-            setRestList(res.data)
+            setTimeout(()=>{
+                setRestList(res.data);
+                setloading(false)
+            },500)
 
         })
     },[]);
@@ -70,7 +75,19 @@ const ListingFull = () => {
                         <CostFilter restPerCost={(data) => {setDataPerFilter(data)}} foodTypeId={foodTypeId} />
                     </div>
 
-                    <ListingDisplay className='col-md-10' listData={restList}/>
+                    {loading ? (
+                        <div className='flex flex-wrap justify-center'>
+                            <h2>Loading....</h2>
+                            <img src="https://i.ibb.co/N71KDpT/loading-buffering.gif" alt="loader"/>
+                        </div>
+                    ):(
+                        <div>
+                            <ListingDisplay className='col-md-10' listData={restList}/>
+                        </div>
+
+                    )}
+
+
                 </div>
                 
             </div>
