@@ -13,10 +13,13 @@ const ListingDisplay = (props) => {
                 return listData.map((item) => {
                     return(
                         <div className='item' key={item._id}>
+                          
                             <div className='row rowi '>
                                 <div className='col-md-5'>
-                                    <img src={item.restaurant_thumb} alt={item.restaurant_name}
-                                    className='Image'/>
+                                    <Link to={`/details?restId=${item.restaurant_id}`}>
+                                        <img src={item.restaurant_thumb} alt={item.restaurant_name}
+                                        className='Image'/>
+                                    </Link>
                                 </div>
                                 <div className='col-md-5'>
                                     <div className='hotel_name'>
@@ -61,10 +64,12 @@ const ListingDisplay = (props) => {
                                             <br></br>
                                             <div className='ml-3 flex justify-center items-center contact-number text-sm'>{item.contact_number}</div></div>
                                         </a>
-                                    </div>
-                       
-                            </div>
 
+                                    </div>
+                                                   <button className='bg-yellow-200 p-4 rounded-md'><Link to={`/details?restId=${item.restaurant_id}`}>GO</Link></button>
+                            </div >
+
+                
                         </div>
                     )
                 })
