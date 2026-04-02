@@ -18,14 +18,14 @@ const MenuDisplay=(props)=>{
                 // console.log("This is ListData"+listData);
                 return listData.map((item) => {
                     return(
-                        <div className="menucontainer"
-                        style={{backgroundColor: theme === 'light' ? 'yellow' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+                        <div className="menucontainer border-2 rounded-md shadow-lg"
+                        style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white', border: theme === 'light' ? '2px solid yellow' : '2px solid white'}}
                         >
                             <div className="thumbnailcontainer">
                                 <img src={item.menu_image} className="menuthumb"></img>
                             </div>
-                            <div class=" menudescription"
-                                 style={{backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white'}}
+                            <div className=" menudescription p-5"
+                                 style={{backgroundColor: theme === 'light' ? 'yellow' : 'black', color: theme === 'light' ? 'black' : 'white'}}
                             >
 
                                 <div className="menuparts text-lg text-center font-bold">{item.menu_name}</div>
