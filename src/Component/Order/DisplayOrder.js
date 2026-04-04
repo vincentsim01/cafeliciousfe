@@ -49,10 +49,10 @@ const DisplayOrder = (props) => {
         
 
         return(
-            <div className="container">
+            <div className="container p-15">
 
                 <center><h2>Orders</h2></center>
-                <table className='table'>
+                <table className='table' p-10>
                     <thead>
                         <tr>
                             <th>OrderId</th>
@@ -67,6 +67,7 @@ const DisplayOrder = (props) => {
                         {renderData(props)}
                     </tbody>
                 </table>
+
             </div>
         )
 

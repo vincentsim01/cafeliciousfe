@@ -45,8 +45,9 @@ const ViewOrder = () => {
     return(
         <>
             <Header2/>
-
-            <DisplayOrder orderData={orders}/>
+            <img src='../bordertop.png' alt='border' className='w-full'/>
+            <DisplayOrder orderData={orders} className='p-15'/>
+            <img src='../border bottom.png' alt='border' className='w-full'/> 
         </>
     )
 }

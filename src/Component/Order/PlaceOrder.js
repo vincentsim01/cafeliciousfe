@@ -79,12 +79,13 @@ const PlaceOrder = () => {
         <>
             <Header2/>
             <div className="container">
+                <img src='../bordertop.png' alt='border' className='w-full'/>
                 <hr/>
                 <div className="panel panel-primary">
-                    <div className="panel-heading">
-                        <h3>Order For {params.restName}</h3>
+                    <div className="panel-heading  bg-gradient-to-br from-yellow-400 to-amber-500 text-center">
+                        <h3 className='text-xl font-bold'>Login</h3>
                     </div>
-                    <div className='panel-body'>
+                    <div className='panel-body p-15'>
                         <div className="row">
                             <div className="col-md-6 form-group">
                                 <label for="fname" className="control-label">Name</label>
@@ -112,11 +113,12 @@ const PlaceOrder = () => {
                                 <h2>Total Price is Rs. {values.cost}</h2>
                             </div>
                         </div>
-                        <button className='btn btn-success' onClick={checkout}>
+                        <button className='bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded' onClick={checkout}>
                                 Submit
                         </button>
                     </div>
                 </div>
+                    <img src='../border bottom.png' alt='border' className='w-full'/> 
             </div>
         </>
     )
