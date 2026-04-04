@@ -62,12 +62,14 @@ const checkout = () => {
         <>
             <Header2/>
             <div className="container p-5 bg-gradient-to-br from-yellow-400 to-amber-500">
-                <hr/>
+                
                 <div className="panel panel-danger bg-gradient-to-br from-yellow-400 to-amber-500">
-                    <div className="panel-heading  bg-gradient-to-br from-yellow-400 to-amber-500">
-                        <h3>Login</h3>
+                    <img src='./bordertop.png' alt='border' className='w-full'/>
+                    <div className="panel-heading  bg-gradient-to-br from-yellow-400 to-amber-500 text-center">
+                        <h3 className='text-xl font-bold'>Login</h3>
                     </div>
-                    <div className='panel-body'>
+                    <br></br>
+                    <div className='panel-body p-10'>
                         <div className='row'>
                             <h2 style={{color:'red'}}>{message}</h2>
                             <div className='col-md-6 form-group'>
@@ -87,6 +89,7 @@ const checkout = () => {
                             Login
                         </button>
                     </div>
+                    <img src='./border bottom.png' alt='border' className='w-full'/>
                 </div>
             </div>
         </>

@@ -59,10 +59,12 @@ const Register = () => {
             <Header2/>
             <div className="container">
                 <hr/>
-                <div className="panel panel-info">
-                    <div className="panel-heading">
-                        <h3>Register</h3>
+                <img src='./bordertop.png' alt='border' className='w-full'/>
+                <div className="panel panel-info p-15">
+                    <div className="panel-heading  bg-gradient-to-br from-yellow-400 to-amber-500 text-center">
+                        <h3 className='text-xl font-bold'>Register</h3>
                     </div>
+                    <br></br><br></br>
                     <div className='panel-body'>
                         <div className='row'>
                             <div className='col-md-6 form-group'>
@@ -87,11 +89,12 @@ const Register = () => {
                             </div>
                             
                         </div>
-                        <button className='btn btn-success' onClick={checkout}>
+                        <button className='bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded' onClick={checkout}>
                                 Register
                         </button>
                     </div>
                 </div>
+                <img src='./border bottom.png' alt='border' className='w-full'/>
             </div>
         </>
        
