@@ -14,6 +14,7 @@ const Details = () => {
 
     let navigate = useNavigate();
     let [searchParams] = useSearchParams();
+    const [mainImage, setMainImage] = useState("");
     let [restDetails,setrestDetails] = useState();
     let [foodTypeId] = useState(sessionStorage.getItem('foodTypeId'));
     // let [restId] = useState(sessionStorage.getItem('restId'));
@@ -36,6 +37,8 @@ const Details = () => {
 
 
     const restDetail = async() => {
+
+
         const rdata = await axios.get(`${baseUrl}/details?restId=${restId}`)
         if(!rdata){
             let prevId = restId > 1 ? restId - 1 : 1;
@@ -45,14 +48,20 @@ const Details = () => {
         axios.get(`${baseUrl}/details?restId=${restId}`)
         .then((res) => {
             setrestDetails(res.data[0])
+            setMainImage(restDetails.restaurant_thumb);
+
         })
         .catch((err) => {
             console.log(err);
             let prevId = restId > 1 ? restId - 1 : 1;
             navigate(`?restId=${prevId}`);
         })
+
+
         // setrestDetails(rdata.data[0])
     }
+
+
 
     useEffect(() => {
         console.log("restId in useEffect: ", restId, "type of restId: ", typeof restId);
@@ -91,8 +100,14 @@ const Details = () => {
         }
     };
 
-    const renderDetails = () => {
+
+    const RenderDetails = () => {
+
+        // const [mainImage, setMainImage] = useState(
+        //     restDetails?.restaurant_thumb
+        // );
         if(restDetails){
+
             return(
                 <div className='p-15'>
 
@@ -107,14 +122,18 @@ const Details = () => {
                 <div id='topcontainer'>
                    <div className='tileImage'>
                         <div className='imageClass'>
-                            <img src={restDetails.restaurant_thumb}
+                            {/* <img src={restDetails.restaurant_thumb}
+                            alt={restDetails.restaurant_name}/> */}
+
+                            <img src={mainImage}
                             alt={restDetails.restaurant_name}/>
                         </div>
-                            {restDetails.image_gallery.map((item)=>{
+                            {restDetails.image_gallery.map((item, index)=>{
                             return(
                                 <div className='inline h-[30vh] ml-3'>
                                     <div className='inline-block w-[25%]'>
-                                           <img src={item} className='rounded-md md:h-[20vh] '></img>
+                                           <img src={item} className='rounded-md md:h-[20vh]'
+                                           onMouseEnter={() => setMainImage(item)}></img>
                                     </div>
                                 </div>
 
@@ -245,7 +264,7 @@ const Details = () => {
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div> */}
-                {renderDetails()}
+                {RenderDetails()}
             </div>
         </>
     )

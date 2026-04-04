@@ -61,10 +61,10 @@ const checkout = () => {
     return(
         <>
             <Header2/>
-            <div className="container">
+            <div className="container p-5 bg-gradient-to-br from-yellow-400 to-amber-500">
                 <hr/>
-                <div className="panel panel-danger">
-                    <div className="panel-heading">
+                <div className="panel panel-danger bg-gradient-to-br from-yellow-400 to-amber-500">
+                    <div className="panel-heading  bg-gradient-to-br from-yellow-400 to-amber-500">
                         <h3>Login</h3>
                     </div>
                     <div className='panel-body'>
