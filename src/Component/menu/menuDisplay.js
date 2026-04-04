@@ -68,10 +68,14 @@ const MenuDisplay=(props)=>{
                 // console.log("This is ListData"+listData);
                 return restData.map((item2) => {
                     return(
-                                <div className='menuDetails'>
-                                    {item2.restaurant_name}
-                                    <br/><br/>
-                                    <Link to={`/details?restId=${item2.restaurant_id}`} className="btn btn-info">Back to {item2.restaurant_name} Page</Link>
+                                <div className='menuprevious'>
+                                    <div className='menuprevioustitle'>This is the menu from cafe: <b>{item2.restaurant_name}</b></div>
+                                    <div className='flex items-center justify-center gap-5'>
+                                        <img src={item2.restaurant_thumb} className="menuprevthumb"></img>
+                                        <br/><br/>
+                                        <Link to={`/details?restId=${item2.restaurant_id}`} className="menubackrestobutton">Back to {item2.restaurant_name} Page</Link>
+                                    </div>
+                                    
                                </div>     
                     )
                 })
@@ -86,9 +90,11 @@ const MenuDisplay=(props)=>{
     return(
 
             <div id="contenta">
-                <span id="thisisthe">This is the menu from cafe: {restaurantData(props)}</span>
+                <img src='/bordertop.png' alt="border" className='w-full'></img>
+                <span id="thisisthe">{restaurantData(props)}</span>
                 &nbsp;&nbsp;&nbsp;&nbsp;<br/>
                 {renderData(props)}
+                <img src='/border bottom.png' alt="border" className='w-full'></img>
             </div>
     
     )
